@@ -1,4 +1,4 @@
-package gr.ds.unipi.noda.api.visualization.server;
+package visualization.server;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
