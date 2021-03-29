@@ -1,8 +1,8 @@
 package visualization.server;
 
 
-import gr.ds.unipi.noda.api.core.dataframe.DataframeManipulator;
-import gr.ds.unipi.noda.api.core.visualization.NoSQLExpression;
+import gr.ds.unipi.noda.api.core.dataframe.visualization.DataframeManipulator;
+import gr.ds.unipi.noda.api.core.nosqldb.NoSQLExpression;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.springframework.web.bind.annotation.*;

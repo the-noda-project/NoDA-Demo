@@ -1,7 +1,7 @@
 package visualization.visualization;
 
 import gr.ds.unipi.noda.api.client.NoSqlDbSystem;
-import gr.ds.unipi.noda.api.core.dataframe.DataframeManipulator;
+import gr.ds.unipi.noda.api.core.dataframe.visualization.DataframeManipulator;
 import visualization.server.ServerManager;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
