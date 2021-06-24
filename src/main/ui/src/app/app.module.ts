@@ -13,6 +13,9 @@ import { AboutModule } from './about/about.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { QueryConstructionModule } from './query-construction/query-construction.module';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   imports: [
@@ -25,7 +28,9 @@ import { QueryConstructionModule } from './query-construction/query-construction
     SharedModule,
     ShellModule,
     HomeModule,
+    BrowserAnimationsModule,
     QueryConstructionModule,
+    SimpleNotificationsModule.forRoot(),
     AboutModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],

@@ -8,6 +8,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DbconnectionPopUpComponent } from './dbconnection-pop-up/dbconnection-pop-up.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     HomeRoutingModule,
   ],
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, DbconnectionPopUpComponent]
 })
 export class HomeModule {}

@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { QueryConstructionRoutingModule } from './query-construction-routing.module';
 import { QueryConstructionComponent } from './query-construction.component';
-import { FieldnamesModalComponent } from './fieldnames-modal/fieldnames-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Ng5SliderModule } from 'ng5-slider';
 import { LeafletDrawModule } from '@asymmetrik/ngx-leaflet-draw';
+import { HomeModule } from '@app/home/home.module';
 
 @NgModule({
-  declarations: [QueryConstructionComponent, FieldnamesModalComponent],
+  declarations: [QueryConstructionComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -18,7 +18,7 @@ import { LeafletDrawModule } from '@asymmetrik/ngx-leaflet-draw';
     Ng5SliderModule,
     LeafletDrawModule,
     FormsModule,
-    QueryConstructionRoutingModule,
+    QueryConstructionRoutingModule
   ],
 })
 export class QueryConstructionModule {}

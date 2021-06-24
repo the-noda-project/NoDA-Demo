@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { QueryConstructionService } from './query-construction.service';
 import { QuoteService } from '@app/home/quote.service';
 import * as turf from '@turf/turf';
+import { DbconnectionPopUpComponent } from '@app/home/dbconnection-pop-up/dbconnection-pop-up.component';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-query-construction',
@@ -31,12 +33,14 @@ export class QueryConstructionComponent implements OnInit {
   hbaseActualQuery: string = "FilterList AND (2/2): [FilterList AND (2/2): [PrefixFilter u336w, CircleFilter (location, longitude, latitude, (13.272429853677751 52.509430292042886),1)], FilterList OR (0/0): []]";
 
   isLoading: boolean = false;
+
   constructor(
     private modal: NgbModal,
     private quoteService: QuoteService,
     private queryConstructionServ: QueryConstructionService,
     private activeRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toast: NotificationsService
   ) {}
 
   chosenGeoSQLFunction: string = 'default';
@@ -169,9 +173,30 @@ export class QueryConstructionComponent implements OnInit {
     }, 2000);
   }
 
+  openModalForDBConnection(db: string) {
+    if (
+      db === 'mongodb' ||
+      db === 'neo4j' ||
+      db === 'hbase' ||
+      db === 'redis'
+    ) {
+      const modalref = this.modal.open(DbconnectionPopUpComponent, {
+        windowClass: 'modalStyle',
+      });
+      modalref.componentInstance.db = db;
+    } else {
+      this.toast.error('Error', 'Please choose a database first to continue.');
+    }
+  }
+
   changeStateOfDropDown() {
     this.isDropDownOpen = !this.isDropDownOpen;
+
+    
+
   }
+
+  
 
   onDrawCreated(e: any) {
     this.drawItems.addLayer((e as L.DrawEvents.Created).layer);
@@ -316,7 +341,7 @@ export class QueryConstructionComponent implements OnInit {
 
             this.spatialVisualization();
           } else {
-            alert('Κάτι δεν πήγε καλά');
+            this.toast.error('Error', 'Something went bad!')
           }
         }
       })
@@ -441,7 +466,7 @@ export class QueryConstructionComponent implements OnInit {
           console.log(' auto einai to id array: ', this.idArray);
           this.playSpatioTemporal();
         } else {
-          alert('Κάτι δεν πήγε καλά');
+          this.toast.error('Error', 'Something went bad!')
         }
       })
       .catch((err) => {

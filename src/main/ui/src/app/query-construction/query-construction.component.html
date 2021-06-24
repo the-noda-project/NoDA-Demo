@@ -23,36 +23,47 @@
           <div *ngIf="isDropDownOpen"
             class="row m-0 d-flex justify-content-center align-items-center pointerToClick mt-3">
             <div *ngIf="activeDatabase === 'mongodb'" class="col-12 p-0 bg-white openRowToChooseDB p-2">
-              <div class="row w-100 m-0 p-2 rowToChoose" (click)="goToOtherDb('neo4j')">
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('neo4j')">
                 <img src="assets/neo4j_logo.png" class="img-fluid" style="width: 6rem;" />
               </div>
-              <div class="row w-100 m-0 p-2 rowToChoose" (click)="goToOtherDb('hbase')">
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('hbase')">
                 <img src="assets/hbase1.png" class="img-fluid" style="width: 6rem;" />
               </div>
-              <div class="row w-100 m-0 p-2 rowToChoose" (click)="goToOtherDb('redis')">
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('redis')">
                 <img src="assets/Redis_Logo.svg" class="img-fluid" style="width: 6rem;" />
               </div>
             </div>
             <div *ngIf="activeDatabase === 'neo4j'" class="col-12 p-0 bg-white openRowToChooseDB p-2">
-              <div class="row w-100 m-0 p-2 rowToChoose" (click)="goToOtherDb('mongodb')">
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('mongodb')">
                 <img src="assets/MongoDB-Logo.png" class="img-fluid" style="width: 6rem;" />
               </div>
-              <div class="row w-100 m-0 p-2 rowToChoose" (click)="goToOtherDb('hbase')">
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('hbase')">
                 <img src="assets/hbase1.png" class="img-fluid" style="width: 6rem;" />
               </div>
-              <div class="row w-100 m-0 p-2 rowToChoose" (click)="goToOtherDb('redis')">
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('redis')">
                 <img src="assets/Redis_Logo.svg" class="img-fluid" style="width: 6rem;" />
               </div>
             </div>
             <div *ngIf="activeDatabase === 'hbase'" class="col-12 p-0 bg-white openRowToChooseDB p-2">
-              <div class="row w-100 m-0 p-2 rowToChoose" (click)="goToOtherDb('mongodb')">
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('mongodb')">
                 <img src="assets/MongoDB-Logo.png" class="img-fluid" style="width: 6rem;" />
               </div>
-              <div class="row w-100 m-0 p-2 rowToChoose" (click)="goToOtherDb('neo4j')">
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('neo4j')">
                 <img src="assets/neo4j_logo.png" class="img-fluid" style="width: 6rem;" />
               </div>
-              <div class="row w-100 m-0 p-2 rowToChoose" (click)="goToOtherDb('redis')">
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('redis')">
                 <img src="assets/Redis_Logo.svg" class="img-fluid" style="width: 6rem;" />
+              </div>
+            </div>
+            <div *ngIf="activeDatabase === 'redis'" class="col-12 p-0 bg-white openRowToChooseDB p-2">
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('mongodb')">
+                <img src="assets/MongoDB-Logo.png" class="img-fluid" style="width: 6rem;" />
+              </div>
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('neo4j')">
+                <img src="assets/neo4j_logo.png" class="img-fluid" style="width: 6rem;" />
+              </div>
+              <div class="row w-100 m-0 p-2 rowToChoose" (click)="openModalForDBConnection('hbase')">
+                <img src="assets/hbase1.png" class="img-fluid" style="width: 6rem;" />
               </div>
             </div>
           </div>
@@ -469,19 +480,19 @@
                       font-weight: 600;
                       font-size: 1.2rem;
                       text-decoration: underline;
-                    "  *ngIf="activeDatabase === 'neo4j'">Final Query in Cypher</span>
-                     <span style="
+                    " *ngIf="activeDatabase === 'neo4j'">Final Query in Cypher</span>
+                  <span style="
                      color: #14274e;
                      font-weight: 600;
                      font-size: 1.2rem;
                      text-decoration: underline;
                    " *ngIf="activeDatabase === 'hbase'">Final expression in Hbase</span>
-                    <span style="
+                  <span style="
                     color: #14274e;
                     font-weight: 600;
                     font-size: 1.2rem;
                     text-decoration: underline;
-                  "  *ngIf="activeDatabase === 'mongodb'">MongoDB pipeline expressions</span>
+                  " *ngIf="activeDatabase === 'mongodb'">MongoDB pipeline expressions</span>
                 </div>
                 <div class="col text-right align-self-center">
                   <i *ngIf="!isActualDBTabOpen" style="font-size: 1.2rem;" class="fas fa-angle-down mt-2"></i>

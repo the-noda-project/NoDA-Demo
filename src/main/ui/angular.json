@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
+              "src/assets/nodaFavicon.png",
               "src/apple-touch-icon.png",
               "src/robots.txt",
               "src/assets"
@@ -107,7 +107,7 @@
               "./node_modules/leaflet-draw/dist/leaflet.draw.css"
             ],
             "assets": [
-              "src/favicon.ico",
+              "src/assets/nodaFavicon.png",
               "src/apple-touch-icon.png",
               "src/robots.txt",
               "src/assets"
