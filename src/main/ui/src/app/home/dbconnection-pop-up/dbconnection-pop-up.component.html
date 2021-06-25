@@ -1,27 +1,54 @@
 <div class="modal-content modalfade pt-2 pb-2">
-    <div class="modal-header">
-        <div class="col-auto p-0 align-self-center">
-            <img src="{{ imageOfDB }}" class="img-fluid" style="width: 8rem;">
-        </div>
-        <div class="col-auto align-self-center" style="font-size: 1.1rem; font-weight: bold;">
-            Connection Parameters
-        </div>
+  <div class="modal-header">
+    <div class="col-auto p-0 align-self-center">
+      <img src="{{ imageOfDB }}" class="img-fluid" style="width: 8rem;" />
     </div>
-    <div class="molad-body p-3">
-        form
+    <div
+      class="col-auto align-self-center"
+      style="font-size: 1.1rem; font-weight: bold;"
+    >
+      Connection Parameters
     </div>
-
-    <div class="modal-footer mt-2">
-        <button (click)="close()" class="btn font-weight-bold"
-            style="color: #b12f26; font-size: 1rem; border: 2px solid #b12f26;">
-            Cancel
-        </button>
-        <button class="btn font-weight-bold" (click)="goToVisualization()"
-            style="color: #14274e; font-size: 1rem; border: 2px solid #14274e;">
-            Connect
-        </button>
+  </div>
+  <div class="molad-body p-3">
+    <div class="row w-100 m-0">
+      <div class="col-12 mb-2">
+        <label>Database</label>
+        <input class="form-control inputStyle" placeholder="Database" />
+      </div>
+      <div class="col-6">
+        <label>Url</label>
+        <input class="form-control inputStyle" placeholder="Url" />
+      </div>
+      <div class="col-6">
+        <label>Port</label>
+        <input class="form-control inputStyle" placeholder="Port" />
+      </div>
+      <div class="col-6 mt-2" *ngIf="db !== 'hbase' && db !== 'redis'">
+        <label>Username</label>
+        <input class="form-control inputStyle" placeholder="Username" />
+      </div>
+      <div class="col-6 mt-2" *ngIf="db !== 'hbase' && db !== 'redis'">
+        <label>Password</label>
+        <input class="form-control inputStyle" placeholder="Password" />
+      </div>
     </div>
+  </div>
 
-
-
+  <div class="modal-footer mt-2">
+    <button
+      (click)="close()"
+      class="btn font-weight-bold"
+      style="color: #b12f26; font-size: 1rem; border: 2px solid #b12f26;"
+    >
+      Cancel
+    </button>
+    <button
+      class="btn font-weight-bold"
+      (click)="goToVisualization()"
+      style="color: #14274e; font-size: 1rem; border: 2px solid #14274e;"
+    >
+      Connect
+    </button>
+  </div>
 </div>

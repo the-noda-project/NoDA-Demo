@@ -8,9 +8,8 @@ describe('DbconnectionPopUpComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DbconnectionPopUpComponent ]
-    })
-    .compileComponents();
+      declarations: [DbconnectionPopUpComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

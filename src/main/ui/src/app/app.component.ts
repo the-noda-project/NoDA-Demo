@@ -17,10 +17,9 @@ const log = new Logger('App');
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
-
   notificationOptions = {
     position: ['top', 'right'],
-    timeOut: 2000
+    timeOut: 2000,
   };
 
   constructor(

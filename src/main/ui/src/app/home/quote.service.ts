@@ -23,6 +23,28 @@ export class QuoteService {
       .toPromise();
   }
 
+  connectToDB(
+    db: string,
+    dbName: string,
+    url: string,
+    port: number,
+    username: string,
+    password: string
+  ) {
+    const body = {
+      db: db,
+      dbName: dbName,
+      url: url,
+      port: port,
+      username: username,
+      password: password,
+    };
+
+    return this.httpClient
+      .post('/db-connection', { responseType: 'text' })
+      .toPromise();
+  }
+
   // getNodaSTData() {
   //   return this.httpClient
   //     .get('/noda-st-timelapse', { responseType: 'text' })

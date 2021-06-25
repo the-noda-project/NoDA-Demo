@@ -16,7 +16,6 @@ import { QueryConstructionModule } from './query-construction/query-construction
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   imports: [
     BrowserModule,

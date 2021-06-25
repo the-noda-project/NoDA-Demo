@@ -18,7 +18,7 @@ import { HomeModule } from '@app/home/home.module';
     Ng5SliderModule,
     LeafletDrawModule,
     FormsModule,
-    QueryConstructionRoutingModule
+    QueryConstructionRoutingModule,
   ],
 })
 export class QueryConstructionModule {}

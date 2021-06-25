@@ -21,6 +21,6 @@ import { DbconnectionPopUpComponent } from './dbconnection-pop-up/dbconnection-p
     SharedModule,
     HomeRoutingModule,
   ],
-  declarations: [HomeComponent, DbconnectionPopUpComponent]
+  declarations: [HomeComponent, DbconnectionPopUpComponent],
 })
 export class HomeModule {}
