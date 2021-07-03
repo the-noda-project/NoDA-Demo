@@ -530,6 +530,11 @@
                       >car</option
                     >
                     <option
+                    *ngIf="activeDatabase === 'mongodb'"
+                    value="passengerCars"
+                    >passengerCars</option
+                  >
+                    <option
                       *ngIf="activeDatabase === 'hbase'"
                       value="car"
                       >car</option
