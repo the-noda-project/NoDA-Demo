@@ -19,26 +19,48 @@ import { NotificationsService } from 'angular2-notifications';
 export class QueryConstructionComponent implements OnInit {
   query: string;
 
-  queryToRunMongo: string =
-    'SELECT* FROM car WHERE GEO_RECTANGLE(location, [(13.263160139322283, 52.49997397893388),(13.306762129068376, 52.52113031608697)] )';
-  queryToRunNeo4j: string =
-    "SELECT* FROM car WHERE GEO_TEMPORAL_CIRCLE_KM(location, (13.285476118326189, 52.51026611136366), 1.5, date, '29/05/2007 12:00:00', '1/06/2007 12:00:00')";
-  queryToRunHbase: string =
-    'SELECT* FROM car WHERE GEO_CIRCLE_KM(location, (13.272429853677751, 52.509430292042886), 1)';
+  // queryToRunMongo: string =
+  //   'SELECT* FROM car WHERE GEO_RECTANGLE(location, [(13.263160139322283, 52.49997397893388),(13.306762129068376, 52.52113031608697)] )';
+  // queryToRunNeo4j: string =
+  //   "SELECT* FROM car WHERE GEO_TEMPORAL_CIRCLE_KM(location, (13.285476118326189, 52.51026611136366), 1.5, date, '29/05/2007 12:00:00', '1/06/2007 12:00:00')";
+  // queryToRunHbase: string =
+  //   'SELECT* FROM car WHERE GEO_CIRCLE_KM(location, (13.272429853677751, 52.509430292042886), 1)';
+  // queryToRunRedis: string =
+  //   'SELECT* FROM car WHERE GEO_CIRCLE_KM(location, (13.272429853677751, 52.509430292042886), 1)';
 
-  mongoSQLQuery: string =
-    'SELECT* FROM car WHERE GEO_RECTANGLE(location, [(13.263160139322283, 52.49997397893388),(13.306762129068376, 52.52113031608697)] )';
-  neo4jSQLQuery: string =
-    "SELECT* FROM car WHERE GEO_TEMPORAL_CIRCLE_KM(location, (13.285476118326189, 52.51026611136366), 1.5, Timestamp, '29/05/2007 12:00:00', '1/06/2007 12:00:00')";
-  hbaseSQLQuery: string =
-    'SELECT* FROM car WHERE GEO_CIRCLE_KM(location, (13.272429853677751, 52.509430292042886), 1)';
+  // mongoSQLQuery: string =
+  //   'SELECT* FROM car WHERE GEO_RECTANGLE(location, [(13.263160139322283, 52.49997397893388),(13.306762129068376, 52.52113031608697)] )';
+  // neo4jSQLQuery: string =
+  //   "SELECT* FROM car WHERE GEO_TEMPORAL_CIRCLE_KM(location, (13.285476118326189, 52.51026611136366), 1.5, Timestamp, '29/05/2007 12:00:00', '1/06/2007 12:00:00')";
+  // hbaseSQLQuery: string =
+  //   'SELECT* FROM car WHERE GEO_CIRCLE_KM(location, (13.272429853677751, 52.509430292042886), 1)';
+  // redisSQLQuery: string =
+  //   'SELECT* FROM car WHERE GEO_CIRCLE_KM(location, (13.272429853677751, 52.509430292042886), 1)';
 
-  mongoActualQuery: string =
-    "{'$match': {'$and': [{'location': {'$geoWithin': {'$geometry': {'type': 'Polygon', 'coordinates': [[[13.263160139322283, 52.49997397893388], [13.263160139322283, 52.52113031608697], [13.306762129068376, 52.52113031608697], [13.306762129068376, 52.49997397893388], [13.263160139322283, 52.49997397893388]]]}}}}, {'$or': [{'hilIndex': {'$in': [37893268]}}]}]}}, {'$limit': 10000}, {'$sample': {'size': 1000}}";
-  neo4jActualQuery: string =
-    "'MATCH (s:car) WHERE s.STHilbertIndex = 8651829 WITH s WHERE distance(point({ srid :7203, x: 52.51026611136366 , y: 13.285476118326189 }), s.location) < 1.5 AND 1180429200000 < s.Timestamp < 1180483200000 WITH s RETURN *'";
-  hbaseActualQuery: string =
-    'FilterList AND (2/2): [FilterList AND (2/2): [PrefixFilter u336w, CircleFilter (location, longitude, latitude, (13.272429853677751 52.509430292042886),1)], FilterList OR (0/0): []]';
+  // mongoActualQuery: string =
+  //   "{'$match': {'$and': [{'location': {'$geoWithin': {'$geometry': {'type': 'Polygon', 'coordinates': [[[13.263160139322283, 52.49997397893388], [13.263160139322283, 52.52113031608697], [13.306762129068376, 52.52113031608697], [13.306762129068376, 52.49997397893388], [13.263160139322283, 52.49997397893388]]]}}}}, {'$or': [{'hilIndex': {'$in': [37893268]}}]}]}}, {'$limit': 10000}, {'$sample': {'size': 1000}}";
+  // neo4jActualQuery: string =
+  //   "'MATCH (s:car) WHERE s.STHilbertIndex = 8651829 WITH s WHERE distance(point({ srid :7203, x: 52.51026611136366 , y: 13.285476118326189 }), s.location) < 1.5 AND 1180429200000 < s.Timestamp < 1180483200000 WITH s RETURN *'";
+  // hbaseActualQuery: string =
+  //   'FilterList AND (2/2): [FilterList AND (2/2): [PrefixFilter u336w, CircleFilter (location, longitude, latitude, (13.272429853677751 52.509430292042886),1)], FilterList OR (0/0): []]';
+  // redisActualQuery: string =
+  //   'FilterList AND (2/2): [FilterList AND (2/2): [PrefixFilter u336w, CircleFilter (location, longitude, latitude, (13.272429853677751 52.509430292042886),1)], FilterList OR (0/0): []]';
+
+  selectValue: string;
+  fromValue: string;
+  whereValue: string;
+
+  objectIdFieldName: string;
+  objectLocationFieldName: string;
+  objectTimeFieldName: string;
+  minTimestamp: string;
+  maxTimestamp: string;
+
+  radius?: number;
+  lat?: number;
+  lon?: number;
+  lat1?: number;
+  lon1?: number;
 
   isLoading: boolean = false;
 
@@ -82,10 +104,6 @@ export class QueryConstructionComponent implements OnInit {
   isSQLqueryTabOpen: boolean = true;
   isActualDBTabOpen: boolean = true;
 
-  objectIdFieldName: string = 'default';
-  objectLocationFieldName: string = 'default';
-  objectTimeFieldName: string = 'default';
-
   drawItems: L.FeatureGroup = L.featureGroup();
   actualQuery = 'Not available yet.';
 
@@ -123,6 +141,7 @@ export class QueryConstructionComponent implements OnInit {
       'STHilbertIndex',
     ],
     hbase: ['cf:vehicle', 'location:date', 'location'],
+    redis: ['_id', 'localDate', 'location:longitude', 'location:latitude'],
   };
 
   map: L.Map;
@@ -219,245 +238,323 @@ export class QueryConstructionComponent implements OnInit {
 
     if (type === 'circle') {
       var theCenterPt = layer.getLatLng();
-
       var center = [theCenterPt.lng, theCenterPt.lat];
       console.log(center);
 
       var theRadius = layer.getRadius();
 
-      console.log('radius: ', theRadius, 'Center: ', theCenterPt);
-
-      if (this.activeDatabase === 'mongodb') {
-        this.query = this.mongoSQLQuery;
-      }
-      if (this.activeDatabase === 'neo4j') {
-        this.query = this.neo4jSQLQuery;
-      }
-      if (this.activeDatabase === 'hbase') {
-        this.query = this.hbaseSQLQuery;
-      }
+      console.log('radius: ', theRadius, 'Center: ', theCenterPt.lat);
+      this.radius = theRadius;
+      this.lat = theCenterPt.lat;
+      this.lon = theCenterPt.lng;
     }
 
     if (type === 'rectangle') {
-      console.log(layer.getLatLngs());
-
-      if (this.activeDatabase === 'mongodb') {
-        this.query = this.mongoSQLQuery;
-      }
-      if (this.activeDatabase === 'neo4j') {
-        this.query = this.neo4jSQLQuery;
-      }
-      if (this.activeDatabase === 'hbase') {
-        this.query = this.hbaseSQLQuery;
-      }
+      var rectanglePoints = layer.getLatLngs();
+      console.log(rectanglePoints);
+      this.lat = rectanglePoints[0][0].lat;
+      this.lon = rectanglePoints[0][0].lng;
+      this.lat1 = rectanglePoints[0][3].lat;
+      this.lon1 = rectanglePoints[0][3].lng;
     }
   }
 
   runSpatialQuery() {
-    let q = '';
+    if (this.objectIdFieldName) {
+      if (this.objectLocationFieldName) {
+        if (this.lat && this.lon) {
+          this.isLoading = true;
 
-    if (this.activeDatabase === 'mongodb') {
-      q = this.queryToRunMongo;
-    }
-    if (this.activeDatabase === 'neo4j') {
-      q = this.queryToRunNeo4j;
-    }
-    if (this.activeDatabase === 'hbase') {
-      q = this.queryToRunHbase;
-    }
-
-    //must where strings karfota na valw auta
-    // this.objectIdFieldName
-    // this.objectLocationFieldName
-    // this.objectTimeFieldName
-
-    this.isLoading = true;
-    this.queryConstructionServ
-      .spatialSqlQueryPost(q, 'vehicle', 'location')
-      .then((res) => {
-        if (this.activeDatabase === 'mongodb') {
-          this.query = this.mongoSQLQuery;
-          this.actualQuery = this.mongoActualQuery;
-        }
-        if (this.activeDatabase === 'neo4j') {
-          this.query = this.neo4jSQLQuery;
-          this.actualQuery = this.neo4jActualQuery;
-        }
-        if (this.activeDatabase === 'hbase') {
-          this.query = this.hbaseSQLQuery;
-          this.actualQuery = this.hbaseActualQuery;
-        }
-        console.log(res);
-        const data = JSON.parse(res);
-        if (data['status'] === 'ok') {
-          this.isLoading = false;
-          this.quoteService.updateData(res);
-          // Take data from serve from quoteService
-          this.dataFromServer = this.quoteService.getData();
-
-          console.log(
-            'edwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwww',
-            this.dataFromServer
-          );
-
-          let parsedData = JSON.parse(this.dataFromServer);
-          this.data = parsedData['data'];
-
-          this.groupedData = this.data;
-          console.log('auta einai ta grouparismena data', this.groupedData);
-          if (this.groupedData[0].id) {
-            let o = Math.round;
-            let r = Math.random;
-            let s = 255;
-            this.data.forEach((element) => {
-              let index = this.idArray.findIndex((id) => id.id === element.id);
-
-              if (index === -1) {
-                this.idArray.push({
-                  id: element.id,
-                  color:
-                    'rgb(' +
-                    o(r() * s) +
-                    ',' +
-                    o(r() * s) +
-                    ',' +
-                    o(r() * s) +
-                    ')',
-                });
-              }
-            });
-
-            // this.createActiveArray()
-
-            console.log(' auto einai to id array: ', this.idArray);
-
-            this.spatialVisualization();
+          if (this.chosenGeoSQLFunction === 'GEO_CIRCLE_KM') {
+            //'SELECT* FROM car WHERE GEO_CIRCLE_KM(location, (13.272429853677751, 52.509430292042886), 1)';
+            this.query =
+              'SELECT* FROM ' +
+              this.fromValue +
+              ' WHERE ' +
+              this.chosenGeoSQLFunction +
+              '(' +
+              this.objectLocationFieldName +
+              ', ( ' +
+              this.lon +
+              ', ' +
+              this.lat +
+              ' ), ' +
+              this.radius +
+              ' )';
+            console.log(this.query);
           } else {
-            this.toast.error('Error', 'Something went bad!');
+            //'SELECT* FROM car WHERE GEO_RECTANGLE(location, [(13.263160139322283, 52.49997397893388),(13.306762129068376, 52.52113031608697)] )';
+            this.query =
+              'SELECT* FROM ' +
+              this.fromValue +
+              ' WHERE ' +
+              this.chosenGeoSQLFunction +
+              '( ' +
+              this.objectLocationFieldName +
+              ' ,[( ' +
+              this.lon +
+              ', ' +
+              this.lat +
+              ' ), ( ' +
+              this.lon1 +
+              ' , ' +
+              this.lat1 +
+              ' )])';
+            console.log(this.query);
           }
+
+          this.queryConstructionServ
+            .spatialSqlQueryPost(this.query, 'vehicle', 'location')
+            .then((res) => {
+              this.query = this.query;
+              this.actualQuery = this.query;
+
+              console.log(res);
+              const data = JSON.parse(res);
+              if (data['status'] === 'ok') {
+                this.isLoading = false;
+                this.quoteService.updateData(res);
+                // Take data from serve from quoteService
+                this.dataFromServer = this.quoteService.getData();
+
+                console.log(
+                  'edwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwww',
+                  this.dataFromServer
+                );
+
+                let parsedData = JSON.parse(this.dataFromServer);
+                this.data = parsedData['data'];
+
+                this.groupedData = this.data;
+                console.log(
+                  'auta einai ta grouparismena data',
+                  this.groupedData
+                );
+                if (this.groupedData[0].id) {
+                  let o = Math.round;
+                  let r = Math.random;
+                  let s = 255;
+                  this.data.forEach((element) => {
+                    let index = this.idArray.findIndex(
+                      (id) => id.id === element.id
+                    );
+
+                    if (index === -1) {
+                      this.idArray.push({
+                        id: element.id,
+                        color:
+                          'rgb(' +
+                          o(r() * s) +
+                          ',' +
+                          o(r() * s) +
+                          ',' +
+                          o(r() * s) +
+                          ')',
+                      });
+                    }
+                  });
+
+                  // this.createActiveArray()
+
+                  console.log(' auto einai to id array: ', this.idArray);
+
+                  this.spatialVisualization();
+                } else {
+                  this.toast.error('Error', 'Something went bad!');
+                }
+              }
+            })
+            .catch((err) => {
+              this.isLoading = false;
+              console.log(err);
+            });
+        } else {
+          this.toast.error('You have to draw on map the limits of the query!');
         }
-      })
-      .catch((err) => {
-        this.isLoading = false;
-        console.log(err);
-      });
+      } else {
+        this.toast.error('Location field must have a value!');
+      }
+    } else {
+      this.toast.error('ID field must have a value!');
+    }
   }
 
   runSpatioTemporalQuery() {
-    let q = '';
-
-    if (this.activeDatabase === 'mongodb') {
-      q = this.queryToRunMongo;
-    }
-    if (this.activeDatabase === 'neo4j') {
-      q = this.queryToRunNeo4j;
-    }
-    if (this.activeDatabase === 'hbase') {
-      q = this.queryToRunHbase;
-    }
-
-    //must where strings karfota na valw auta
-    // this.objectIdFieldName
-    // this.objectLocationFieldName
-    // this.objectTimeFieldName
-
-    this.isLoading = true;
-    this.queryConstructionServ
-      .spatioTemporalSqlQueryPost(q, 'vehicle', 'location', 'date')
-      .then((res) => {
-        console.log(res);
-        const data = JSON.parse(res);
-        if (data['status'] === 'ok') {
-          this.isLoading = false;
-          if (this.activeDatabase === 'mongodb') {
-            this.query = this.mongoSQLQuery;
-            this.actualQuery = this.mongoActualQuery;
-          }
-          if (this.activeDatabase === 'neo4j') {
-            this.query = this.neo4jSQLQuery;
-            this.actualQuery = this.neo4jActualQuery;
-          }
-          if (this.activeDatabase === 'hbase') {
-            this.query = this.hbaseSQLQuery;
-            this.actualQuery = this.hbaseActualQuery;
-          }
-          this.quoteService.updateData(res);
-          // Take data from serve from quoteService
-          this.dataFromServer = this.quoteService.getData();
-
-          console.log(
-            'edwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwww',
-            this.dataFromServer
-          );
-          let parsedData = JSON.parse(this.dataFromServer);
-          this.data = parsedData['data'];
-
-          // JS Date needs milli Epoch Timestamp (so below is a milli epoch converter)
-          console.log(
-            this.data,
-            'ayto einai ena date: ' +
-              new Date(
-                parseInt(this.timestampManipulation(this.data[0]['time']))
-              )
-          );
-
-          this.opt = {
-            floor: parseInt(this.timestampManipulation(this.data[0]['time'])),
-            ceil: parseInt(
-              this.timestampManipulation(
-                this.data[this.data.length - 1]['time']
-              )
-            ),
-          };
-
-          console.log('floor', this.opt.floor, 'ceil', this.opt.ceil);
-
-          this.value = this.opt.floor;
-          this.maxValue =
-            this.opt.floor + this.windowBetweenFloorAndCeil * 60 * 60 * 1000;
-
-          this.groupedData = _.groupBy(this.data, 'time');
-          console.log('auta einai ta grouparismena data', this.groupedData);
-
-          // for (let key in this.groupedData) {
-          //   this.opt.ticksArray.push(parseInt(this.timestampManipulation(key)));
-          // }
-
-          // console.log('ticksArray: ', this.opt.ticksArray);
-
-          let o = Math.round;
-          let r = Math.random;
-          let s = 255;
-          this.data.forEach((element) => {
-            let index = this.idArray.findIndex((id) => id.id === element.id);
-
-            if (index === -1) {
-              this.idArray.push({
-                id: element.id,
-                color:
-                  'rgb(' +
-                  o(r() * s) +
-                  ',' +
-                  o(r() * s) +
-                  ',' +
-                  o(r() * s) +
-                  ')',
-              });
+    if (this.objectIdFieldName) {
+      if (this.objectLocationFieldName) {
+        if (
+          this.objectTimeFieldName &&
+          this.minTimestamp &&
+          this.maxTimestamp
+        ) {
+          if (this.lat && this.lon) {
+            if (this.chosenGeoSQLFunction === 'GEO_TEMPORAL_CIRCLE_KM') {
+              // "SELECT* FROM car WHERE GEO_TEMPORAL_CIRCLE_KM(location, (13.285476118326189, 52.51026611136366), 1.5, date, '29/05/2007 12:00:00', '1/06/2007 12:00:00')";
+              this.query =
+                'SELECT* FROM ' +
+                this.fromValue +
+                ' WHERE ' +
+                this.chosenGeoSQLFunction +
+                '( ' +
+                this.objectLocationFieldName +
+                ' , ( ' +
+                this.lon +
+                ' ,' +
+                this.lat +
+                ' ), ' +
+                this.radius +
+                ' , ' +
+                this.objectTimeFieldName +
+                ' , ' +
+                this.minTimestamp +
+                ' , ' +
+                this.maxTimestamp +
+                ' )';
+              console.log(this.query);
+            } else {
+              this.query =
+                'SELECT* FROM ' +
+                this.fromValue +
+                ' WHERE ' +
+                this.chosenGeoSQLFunction +
+                '( ' +
+                this.objectLocationFieldName +
+                ' ,[( ' +
+                this.lon +
+                ' , ' +
+                this.lat +
+                ' ) ,( ' +
+                this.lon1 +
+                ' , ' +
+                this.lat1 +
+                ' )], ' +
+                this.objectTimeFieldName +
+                ' , ' +
+                this.minTimestamp +
+                ' , ' +
+                this.maxTimestamp +
+                ' )';
+              console.log(this.query);
             }
-          });
 
-          // this.createActiveArray()
+            this.isLoading = true;
+            this.queryConstructionServ
+              .spatioTemporalSqlQueryPost(
+                this.query,
+                'vehicle',
+                'location',
+                'date'
+              )
+              .then((res) => {
+                console.log(res);
+                const data = JSON.parse(res);
+                if (data['status'] === 'ok') {
+                  this.isLoading = false;
+                  this.query = this.query;
+                  this.actualQuery = this.query;
+                  this.quoteService.updateData(res);
+                  // Take data from serve from quoteService
+                  this.dataFromServer = this.quoteService.getData();
 
-          console.log(' auto einai to id array: ', this.idArray);
-          this.playSpatioTemporal();
+                  console.log(
+                    'edwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwwwedwwwwwwwwwwwwwwwwwww',
+                    this.dataFromServer
+                  );
+                  let parsedData = JSON.parse(this.dataFromServer);
+                  this.data = parsedData['data'];
+
+                  // JS Date needs milli Epoch Timestamp (so below is a milli epoch converter)
+                  console.log(
+                    this.data,
+                    'ayto einai ena date: ' +
+                      new Date(
+                        parseInt(
+                          this.timestampManipulation(this.data[0]['time'])
+                        )
+                      )
+                  );
+
+                  this.opt = {
+                    floor: parseInt(
+                      this.timestampManipulation(this.data[0]['time'])
+                    ),
+                    ceil: parseInt(
+                      this.timestampManipulation(
+                        this.data[this.data.length - 1]['time']
+                      )
+                    ),
+                  };
+
+                  console.log('floor', this.opt.floor, 'ceil', this.opt.ceil);
+
+                  this.value = this.opt.floor;
+                  this.maxValue =
+                    this.opt.floor +
+                    this.windowBetweenFloorAndCeil * 60 * 60 * 1000;
+
+                  this.groupedData = _.groupBy(this.data, 'time');
+                  console.log(
+                    'auta einai ta grouparismena data',
+                    this.groupedData
+                  );
+
+                  // for (let key in this.groupedData) {
+                  //   this.opt.ticksArray.push(parseInt(this.timestampManipulation(key)));
+                  // }
+
+                  // console.log('ticksArray: ', this.opt.ticksArray);
+
+                  let o = Math.round;
+                  let r = Math.random;
+                  let s = 255;
+                  this.data.forEach((element) => {
+                    let index = this.idArray.findIndex(
+                      (id) => id.id === element.id
+                    );
+
+                    if (index === -1) {
+                      this.idArray.push({
+                        id: element.id,
+                        color:
+                          'rgb(' +
+                          o(r() * s) +
+                          ',' +
+                          o(r() * s) +
+                          ',' +
+                          o(r() * s) +
+                          ')',
+                      });
+                    }
+                  });
+
+                  // this.createActiveArray()
+
+                  console.log(' auto einai to id array: ', this.idArray);
+                  this.playSpatioTemporal();
+                } else {
+                  this.toast.error('Error', 'Something went bad!');
+                }
+              })
+              .catch((err) => {
+                this.isLoading = false;
+                console.log(err);
+              });
+          } else {
+            this.toast.error(
+              'You have to draw on map the limits of the query!'
+            );
+          }
         } else {
-          this.toast.error('Error', 'Something went bad!');
+          this.toast.error(
+            'Time field must have a value and mix/max timestamp also!'
+          );
         }
-      })
-      .catch((err) => {
-        this.isLoading = false;
-        console.log(err);
-      });
+      } else {
+        this.toast.error('Location field must have a value!');
+      }
+    } else {
+      this.toast.error('ID field must have a value!');
+    }
   }
 
   timestampManipulation(time: any) {

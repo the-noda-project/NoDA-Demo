@@ -24,12 +24,13 @@ export class QuoteService {
   }
 
   connectToDB(
-    db: string,
-    dbName: string,
-    url: string,
-    port: number,
-    username: string,
-    password: string
+    db?: string,
+    dbName?: string,
+    url?: string,
+    port?: number,
+    username?: string,
+    password?: string,
+    collection?: string
   ) {
     const body = {
       db: db,
@@ -38,10 +39,11 @@ export class QuoteService {
       port: port,
       username: username,
       password: password,
+      collection: collection
     };
 
     return this.httpClient
-      .post('/db-connection', { responseType: 'text' })
+      .post('/db-connection/' + body.db, body, { responseType: 'text' })
       .toPromise();
   }
 

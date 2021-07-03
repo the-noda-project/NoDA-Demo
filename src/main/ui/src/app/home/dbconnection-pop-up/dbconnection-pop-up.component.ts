@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsService } from 'angular2-notifications';
+import { QuoteService } from '../quote.service';
 
 @Component({
   selector: 'app-dbconnection-pop-up',
@@ -13,10 +14,18 @@ export class DbconnectionPopUpComponent implements OnInit {
   db: string;
   imageOfDB: string;
 
+  dbName: string;
+  url: string;
+  port: number;
+  username: string;
+  password: string;
+  collection: string;
+
   constructor(
     private modal: NgbModal,
     private router: Router,
-    private toast: NotificationsService
+    private toast: NotificationsService,
+    private quoteService: QuoteService
   ) {}
 
   ngOnInit(): void {
@@ -45,8 +54,25 @@ export class DbconnectionPopUpComponent implements OnInit {
       this.db === 'hbase' ||
       this.db === 'redis'
     ) {
-      this.modal.dismissAll();
-      this.router.navigate(['/visualization/dbtype/' + this.db]);
+      this.quoteService
+        .connectToDB(
+          this.db,
+          this.dbName,
+          this.url,
+          this.port,
+          this.username,
+          this.password,
+          this.collection
+        )
+        .then((res) => {
+          this.modal.dismissAll();
+          console.log(res);
+          this.router.navigate(['/visualization/dbtype/' + this.db]);
+        })
+        .catch((err) => {
+          this.toast.error('Error', err);
+          console.log(err);
+        });
     } else {
       this.toast.error('Error', 'Please choose a database first to continue.');
     }

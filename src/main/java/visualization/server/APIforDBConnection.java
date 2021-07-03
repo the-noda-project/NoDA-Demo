@@ -3,7 +3,6 @@ import gr.ds.unipi.noda.api.client.NoSqlDbSystem;
 import org.apache.spark.sql.SparkSession;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.Map;
 
 import static visualization.visualization.Visualize.dbSystem;
@@ -12,79 +11,92 @@ import static visualization.visualization.Visualize.dbSystem;
     @RestController
     public class APIforDBConnection {
 
-//        static Dataset<Row> spatialDataset;
-
-        @RequestMapping(value = "/db-connection", method = RequestMethod.POST)
+        @RequestMapping(value = "/db-connection/redis", method = RequestMethod.POST)
         @ResponseBody
-        public String spatialSQLQueryPost(@RequestBody Map<String, String> json) throws Exception {
-            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " +json.get("url")  + " /// " +json.get("port") + " /// " + json.get("username") + " /// " + json.get("password") );
+        public String connectToRedis(@RequestBody Map<String, String> json) throws Exception {
+            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " + json.get("url") + " /// " + json.get("port") + " /// " + json.get("username") + " /// " + json.get("password"));
 
+            SparkSession spark = SparkSession
+                    .builder()
+                    .appName("redis-df")
+                    .master("local[*]")
+                    .config("spark.redis.host", json.get("url"))
+                    .config("spark.redis.port", json.get("port"))
+                    .getOrCreate();
 
-            String db = json.get("db");
-            String dbName = json.get("dbName");
-            String url = json.get("url");
-            Integer port = Integer.parseInt(json.get("port"));
-            String username = json.get("username");
-            String password = json.get("password");
+            dbSystem = NoSqlDbSystem.Redis().Builder().port(Integer.parseInt(json.get("port"))).sparkSession(spark).build();
+            //localhost //6379
 
-            if(db == "mongodb") {
-
-                dbSystem.closeConnection();
-
-                SparkSession spark = SparkSession
-                        .builder()
-                        .appName("Application Name").master("local")
-                        .config("spark.mongodb.input.uri", "mongodb://"+ username +":"+ password +"@"+ url +":"+ port +"/"+ dbName)
-                        .getOrCreate();
-
-                dbSystem = NoSqlDbSystem.MongoDB().Builder(username,password,dbName).host(url).port(port).sparkSession(spark).build();
-                //nikos //12345 //admin //127.0.0.1 //27017
-            }
-            if(db == "hbase") {
-
-                dbSystem.closeConnection();
-
-                SparkSession spark = SparkSession
-                        .builder()
-                        .appName("Application Name").master("local")
-                        .getOrCreate();
-
-                dbSystem = NoSqlDbSystem.HBase().Builder().port(port).sparkSession(spark).build();
-                //2181
-            }
-            if(db == "neo4j") {
-
-                dbSystem.closeConnection();
-
-                SparkSession spark = SparkSession
-                        .builder()
-                        .appName("Application Name").master("local")
-                        .config("spark.neo4j.user", username)
-                        .config("spark.neo4j.password", password)
-                        .config("spark.neo4j.url","bolt://"+ url +":" + port)
-                        .getOrCreate();
-
-                dbSystem = NoSqlDbSystem.Neo4j().Builder(username, password).host(url).port(port).sparkSession(spark).build();
-                //neo4j //nikos //localhost //7687
-            }
-            if(db == "redis") {
-
-                dbSystem.closeConnection();
-
-                SparkSession spark = SparkSession
-                        .builder()
-                        .appName("redis-df")
-                        .master("local[*]")
-                        .config("spark.redis.host", url)
-                        .config("spark.redis.port", port)
-                        .getOrCreate();
-
-                dbSystem = NoSqlDbSystem.Redis().Builder().port(port).sparkSession(spark).build();
-                //localhost //6379
-            }
-
-            return null;
-
-
+            return "Connected to Redis";
         }
+
+        @RequestMapping(value = "/db-connection/mongodb", method = RequestMethod.POST)
+        @ResponseBody
+        public String connectToMongoDB(@RequestBody Map<String, String> json) throws Exception {
+            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " +json.get("url")  + " /// " +json.get("port") + " /// " + json.get("username") + " /// " + json.get("password") + " /// " + json.get("collection") + " /// " );
+
+//            dbSystem.closeConnection();
+
+//            SparkSession spark = SparkSession
+//                    .builder()
+//                    .appName("Application Name").master("local")
+//                    .config("spark.mongodb.input.uri", "mongodb://"+ json.get("username") +":"+ json.get("password") +"@"+ json.get("url") +":"+ json.get("port") +"/"+ json.get("dbName"))
+//                    .getOrCreate();
+
+            SparkSession spark = SparkSession
+                    .builder()
+                    .appName("Application Name").master("local").config("spark.mongodb.input.database",json.get("dbName")).config("spark.mongodb.input.collection", json.get("collection"))
+                    .config("spark.mongodb.input.uri", "mongodb://"+ json.get("username") +":"+ json.get("password") +"@"+ json.get("url") +":"+ json.get("port"))
+                    .getOrCreate();
+
+            dbSystem = NoSqlDbSystem.MongoDB().Builder(json.get("username"),json.get("password"),json.get("dbName")).host(json.get("url")).port(Integer.parseInt(json.get("port"))).sparkSession(spark).build();
+            //nikos //12345 //admin //127.0.0.1 //27017
+            if(dbSystem == null){
+                System.out.println("true");
+            }
+
+            return "Connected to MongoDB";
+        }
+
+
+        @RequestMapping(value = "/db-connection/hbase", method = RequestMethod.POST)
+        @ResponseBody
+        public String connectToHBASE(@RequestBody Map<String, String> json) throws Exception {
+            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " + json.get("url") + " /// " + json.get("port") + " /// " + json.get("username") + " /// " + json.get("password"));
+
+            SparkSession spark = SparkSession
+                        .builder()
+                        .appName("Application Name").master("local")
+                        .getOrCreate();
+
+            dbSystem = NoSqlDbSystem.HBase().Builder().port(Integer.parseInt(json.get("port"))).sparkSession(spark).build();
+            //2181
+
+            return "Connected to Hbase";
+        }
+
+
+
+
+
+        @RequestMapping(value = "/db-connection/neo4j", method = RequestMethod.POST)
+        @ResponseBody
+        public String connectToNeo4j(@RequestBody Map<String, String> json) throws Exception {
+            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " + json.get("url") + " /// " + json.get("port") + " /// " + json.get("username") + " /// " + json.get("password"));
+
+            SparkSession spark = SparkSession
+                        .builder()
+                        .appName("Application Name").master("local")
+                        .config("spark.neo4j.user", json.get("username"))
+                        .config("spark.neo4j.password", json.get("password"))
+                        .config("spark.neo4j.url","bolt://"+ json.get("url") +":" + json.get("port"))
+                        .getOrCreate();
+
+                dbSystem = NoSqlDbSystem.Neo4j().Builder(json.get("username"), json.get("password")).host(json.get("url")).port(Integer.parseInt(json.get("port"))).sparkSession(spark).build();
+                //neo4j //nikos //localhost //7687
+
+            return "Connected to Neo4j";
+        }
+
+
     }

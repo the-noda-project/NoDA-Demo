@@ -14,23 +14,51 @@
     <div class="row w-100 m-0">
       <div class="col-12 mb-2">
         <label>Database</label>
-        <input class="form-control inputStyle" placeholder="Database" />
+        <input
+          class="form-control inputStyle"
+          [(ngModel)]="dbName"
+          placeholder="Database"
+        />
+      </div>
+      <div class="col-12 mb-2">
+        <label>Collection</label>
+        <input
+          class="form-control inputStyle"
+          [(ngModel)]="collection"
+          placeholder="Collection"
+        />
       </div>
       <div class="col-6">
         <label>Url</label>
-        <input class="form-control inputStyle" placeholder="Url" />
+        <input
+          class="form-control inputStyle"
+          [(ngModel)]="url"
+          placeholder="Url"
+        />
       </div>
       <div class="col-6">
         <label>Port</label>
-        <input class="form-control inputStyle" placeholder="Port" />
+        <input
+          class="form-control inputStyle"
+          [(ngModel)]="port"
+          placeholder="Port"
+        />
       </div>
       <div class="col-6 mt-2" *ngIf="db !== 'hbase' && db !== 'redis'">
         <label>Username</label>
-        <input class="form-control inputStyle" placeholder="Username" />
+        <input
+          class="form-control inputStyle"
+          [(ngModel)]="username"
+          placeholder="Username"
+        />
       </div>
       <div class="col-6 mt-2" *ngIf="db !== 'hbase' && db !== 'redis'">
         <label>Password</label>
-        <input class="form-control inputStyle" placeholder="Password" />
+        <input
+          class="form-control inputStyle"
+          [(ngModel)]="password"
+          placeholder="Password"
+        />
       </div>
     </div>
   </div>

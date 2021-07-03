@@ -23,43 +23,51 @@ public class SqlQueryAPI {
     public String spatialSQLQueryPost(@RequestBody Map<String, String> json) throws Exception {
         System.out.println(json.get("query") + " /// " +json.get("idFieldName")  + " /// " +json.get("locationFieldName")  );
 
-        if (json.get("idFieldName") == null) {
+        if(dbSystem == null){
+            System.out.println("true");
+        }
 
-            Dataset<Row> result = dbSystem.sql(json.get("query")).toDataframe();
-
-
-
-            System.out.println(NoSQLExpression.INSTANCE.getExpression());
-
-            spatialDataset = DataframeManipulator.spatialView(result, json.get("locationFieldName")).select(json.get("locationFieldName"));
-
-            spatialDataset.show();
-
-            StringBuilder sb = new StringBuilder();
-
-            sb.append("{ \"status\": \"ok\", \"data\": [ ");
-
-            spatialDataset.collectAsList().forEach(row -> {
-
-                List<String> locationList = row.getList(0);
-                sb.append("{");
-                sb.append(" \"lat\": " + " \"" + locationList.get(0) + "\"" );
-                sb.append(",");
-                sb.append(" \"lon\": " + " \"" + locationList.get(1) + "\"" );
-                sb.append("},");
-            });
-
-
-            sb.append("] }");
-            sb.deleteCharAt(sb.lastIndexOf(","));
-
-            String spatialResult = sb.toString();
-
-
-
-            return spatialResult;
-
-        } else {
+//        if (json.get("idFieldName") == null) {
+//
+//            Dataset<Row> result = dbSystem.sql(json.get("query")).toDataframe();
+//
+//
+//
+//            System.out.println(NoSQLExpression.INSTANCE.getExpression());
+//
+//            spatialDataset = DataframeManipulator.spatialView(result, json.get("locationFieldName")).select(json.get("locationFieldName"));
+//
+//            spatialDataset.show();
+//
+//            StringBuilder sb = new StringBuilder();
+//
+//            sb.append("{ \"status\": \"ok\", \"data\": [ ");
+//
+//            spatialDataset.collectAsList().forEach(row -> {
+//
+//                List<String> locationList = row.getList(0);
+//                sb.append("{");
+//                sb.append(" \"lat\": " + " \"" + locationList.get(0) + "\"" );
+//                sb.append(",");
+//                sb.append(" \"lon\": " + " \"" + locationList.get(1) + "\"" );
+//                sb.append("},");
+//            });
+//
+//
+//            sb.append("] }");
+//            sb.deleteCharAt(sb.lastIndexOf(","));
+//
+//            String spatialResult = sb.toString();
+//
+//
+//
+//            return spatialResult;
+//
+//        } else {
+//
+//            if(dbSystem == null){
+//                System.out.println("true");
+//            }
 
             Dataset<Row> result = dbSystem.sql(json.get("query")).toDataframe();
 
@@ -95,7 +103,7 @@ public class SqlQueryAPI {
 
             return spatialResult;
 
-        }
+//        }
 
 
     }

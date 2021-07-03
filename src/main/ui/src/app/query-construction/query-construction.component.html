@@ -355,6 +355,49 @@
             </div>
           </div>
         </div>
+
+        <!-- redis structure -->
+        <div
+          class="col-12"
+          *ngIf="activeDatabase === 'redis' && !dbChangeConnectorLoading"
+        >
+          <div
+            class="row w-100 m-0 pb-2"
+            style="color: #14274e; font-weight: 600; font-size: 1.2rem;"
+          >
+            Database
+          </div>
+          <div class="row w-100 m-0 pt-2 pb-2">
+            <div class="col-auto m-1 schemaStyle">
+              car
+            </div>
+          </div>
+          <div
+            class="row w-100 m-0 pt-5 pb-2"
+            style="color: #14274e; font-weight: 600; font-size: 1.2rem;"
+          >
+            Data
+          </div>
+          <div class="row w-100 m-0 pt-2 pb-2">
+            <div class="col-auto m-1 schemaStyle">
+              2.965.074
+            </div>
+          </div>
+          <div
+            class="row w-100 m-0 pt-5 pb-2"
+            style="color: #14274e; font-weight: 600; font-size: 1.2rem;"
+          >
+            Keys
+          </div>
+          <div class="row w-100 m-0 pt-2 pb-2">
+            <div
+              *ngFor="let redisProp of dropDownProps.redis"
+              class="col-auto m-1 schemaStyle"
+            >
+              {{ redisProp }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -450,6 +493,18 @@
                       >{{ hbaseProp }}
                     </option>
                   </select>
+                  <select
+                    class="selectStyle ml-2 p-2"
+                    *ngIf="activeDatabase === 'redis'"
+                  >
+                    <option value="default" disabled></option>
+                    <option value="*">*</option>
+                    <option
+                      *ngFor="let redisProp of dropDownProps.redis"
+                      value="{{ redisProp }}"
+                      >{{ redisProp }}
+                    </option>
+                  </select>
                   <button class="btn btn-link ml-2">
                     <i class="fas fa-plus" style="color: #14274e;"></i>
                   </button>
@@ -463,20 +518,25 @@
                   <select class="selectStyle p-2">
                     <option value="FROM">FROM</option>
                   </select>
-                  <select class="selectStyle ml-2 p-2">
+                  <select class="selectStyle ml-2 p-2" [(ngModel)]="fromValue">
                     <option
                       *ngIf="activeDatabase === 'neo4j'"
-                      value="SpatioTemporal_DB"
+                      value="car"
                       >car</option
                     >
                     <option
                       *ngIf="activeDatabase === 'mongodb'"
-                      value="SpatioTemporal_DB"
+                      value="car"
                       >car</option
                     >
                     <option
                       *ngIf="activeDatabase === 'hbase'"
-                      value="SpatioTemporal_DB"
+                      value="car"
+                      >car</option
+                    >
+                    <option
+                      *ngIf="activeDatabase === 'redis'"
+                      value="car"
                       >car</option
                     >
                   </select>
@@ -574,6 +634,17 @@
                             >{{ hbaseProp }}
                           </option>
                         </select>
+                        <select
+                          class="selectStyle ml-2 p-2"
+                          *ngIf="activeDatabase === 'redis'"
+                          [(ngModel)]="objectIdFieldName"
+                        >
+                          <option
+                            *ngFor="let redisProp of dropDownProps.redis"
+                            value="{{ redisProp }}"
+                            >{{ redisProp }}
+                          </option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -624,6 +695,17 @@
                           *ngFor="let hbaseProp of dropDownProps.hbase"
                           value="{{ hbaseProp }}"
                           >{{ hbaseProp }}
+                        </option>
+                      </select>
+                      <select
+                        class="selectStyle ml-2 p-2"
+                        *ngIf="activeDatabase === 'redis'"
+                        [(ngModel)]="objectLocationFieldName"
+                      >
+                        <option
+                          *ngFor="let redisProp of dropDownProps.redis"
+                          value="{{ redisProp }}"
+                          >{{ redisProp }}
                         </option>
                       </select>
                     </div>
@@ -700,6 +782,17 @@
                             >{{ hbaseProp }}
                           </option>
                         </select>
+                        <select
+                          class="selectStyle ml-2 p-2"
+                          *ngIf="activeDatabase === 'redis'"
+                          [(ngModel)]="objectTimeFieldName"
+                        >
+                          <option
+                            *ngFor="let redisProp of dropDownProps.redis"
+                            value="{{ redisProp }}"
+                            >{{ redisProp }}
+                          </option>
+                        </select>
                       </div>
                     </div>
                     <div class="col-auto" style="font-size: 0.9rem;">
@@ -707,7 +800,10 @@
                         minTimestamp
                       </div>
                       <div class="row w-100">
-                        <input class="inputStyle ml-2 p-2" />
+                        <input
+                          [(ngModel)]="minTimestamp"
+                          class="inputStyle ml-2 p-2"
+                        />
                       </div>
                     </div>
                     <div class="col-auto" style="font-size: 0.9rem;">
@@ -715,7 +811,10 @@
                         maxTimestamp
                       </div>
                       <div class="row w-100">
-                        <input class="inputStyle ml-2 p-2" />
+                        <input
+                          [(ngModel)]="maxTimestamp"
+                          class="inputStyle ml-2 p-2"
+                        />
                       </div>
                     </div>
                   </div>
@@ -908,6 +1007,16 @@
                     "
                     *ngIf="activeDatabase === 'mongodb'"
                     >MongoDB pipeline expressions</span
+                  >
+                  <span
+                    style="
+                      color: #14274e;
+                      font-weight: 600;
+                      font-size: 1.2rem;
+                      text-decoration: underline;
+                    "
+                    *ngIf="activeDatabase === 'redis'"
+                    >Final expression in Redis</span
                   >
                 </div>
                 <div class="col text-right align-self-center">
