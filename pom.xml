@@ -30,7 +30,12 @@
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
                 <artifactId>commons-compiler</artifactId>
-                <version>2.7.8</version>
+                <version>3.0.8</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.janino</groupId>
+                <artifactId>janino</artifactId>
+                <version>3.0.8</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -47,6 +52,7 @@
         <!--                        </exclusion>-->
         <!--                    </exclusions>-->
         <!--                </dependency>-->
+
         <dependency>
             <groupId>gr.unipi.noda</groupId>
             <artifactId>nosql-operators-client</artifactId>
@@ -96,40 +102,40 @@
 
     <!--    UNCOMMENT for Angular build -->
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <executable>ng</executable>
-                    <workingDirectory>src/main/ui</workingDirectory>
-                    <arguments>
-                        <argument>build</argument>
-                    </arguments>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.codehaus.mojo</groupId>-->
+<!--                <artifactId>exec-maven-plugin</artifactId>-->
+<!--                <version>1.6.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>validate</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>exec</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <executable>ng</executable>-->
+<!--                    <workingDirectory>src/main/ui</workingDirectory>-->
+<!--                    <arguments>-->
+<!--                        <argument>build</argument>-->
+<!--                    </arguments>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>repackage</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>
