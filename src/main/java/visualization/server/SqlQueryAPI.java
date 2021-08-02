@@ -17,23 +17,16 @@ public class SqlQueryAPI {
 
     static Dataset<Row> spatialDataset;
     static Dataset<Row> spatioTemporalDataset;
+    static String expression;
 
     @RequestMapping(value = "/spatial-sql-query", method = RequestMethod.POST)
     @ResponseBody
     public String spatialSQLQueryPost(@RequestBody Map<String, String> json) throws Exception {
         System.out.println(json.get("query") + " /// " +json.get("idFieldName")  + " /// " +json.get("locationFieldName")  );
 
-        if(dbSystem == null){
-            System.out.println("true");
-        }
-
         if (json.get("idFieldName") == null) {
 
             Dataset<Row> result = dbSystem.sql(json.get("query")).toDataframe();
-
-
-
-            System.out.println(NoSQLExpression.INSTANCE.getExpression());
 
             spatialDataset = DataframeManipulator.spatialView(result, json.get("locationFieldName")).select(json.get("locationFieldName"));
 
@@ -54,8 +47,14 @@ public class SqlQueryAPI {
             });
 
 
-            sb.append("] }");
+            sb.append("]");
             sb.deleteCharAt(sb.lastIndexOf(","));
+            if(NoSQLExpression.INSTANCE.getExpression()!=null) {
+                sb.append(", \"exp\": \"" + expression.replace("\"","'") + "\"}");
+            } else {
+                sb.append("}");
+            }
+
 
             String spatialResult = sb.toString();
 
@@ -65,10 +64,6 @@ public class SqlQueryAPI {
 
         } else {
 
-            if(dbSystem == null){
-                System.out.println("true");
-            }
-
             Dataset<Row> result = dbSystem.sql(json.get("query")).toDataframe();
 
             System.out.println(NoSQLExpression.INSTANCE.getExpression());
@@ -76,6 +71,8 @@ public class SqlQueryAPI {
             spatialDataset = DataframeManipulator.spatialView(result, json.get("locationFieldName")).select(json.get("idFieldName") ,json.get("locationFieldName"));
 
             spatialDataset.show();
+
+            expression = NoSQLExpression.INSTANCE.getExpression();
 
             StringBuilder sb = new StringBuilder();
 
@@ -94,8 +91,15 @@ public class SqlQueryAPI {
             });
 
 
-            sb.append("] }");
+            sb.append("]");
+
             sb.deleteCharAt(sb.lastIndexOf(","));
+
+            if(NoSQLExpression.INSTANCE.getExpression()!=null) {
+                sb.append(", \"exp\": \"" + expression.replace("\"","'") + "\"}");
+            } else {
+                sb.append("}");
+            }
 
             String spatialResult = sb.toString();
 
@@ -116,11 +120,11 @@ public class SqlQueryAPI {
 
         Dataset<Row> result = dbSystem.sql(json.get("query")).toDataframe();
 
-        System.out.println(NoSQLExpression.INSTANCE.getExpression());
-
         spatioTemporalDataset = DataframeManipulator.trajectoriesTimelapse(result, json.get("locationFieldName"), json.get("timeFieldName")).select(json.get("idFieldName"),json.get("locationFieldName"),json.get("timeFieldName")).sort(json.get("timeFieldName"));
 
         spatioTemporalDataset.show();
+
+        expression = NoSQLExpression.INSTANCE.getExpression();
 
         StringBuilder sb = new StringBuilder();
 
@@ -142,8 +146,15 @@ public class SqlQueryAPI {
         });
 
 
-        sb.append("] }");
+        sb.append("]");
+
         sb.deleteCharAt(sb.lastIndexOf(","));
+
+        if(NoSQLExpression.INSTANCE.getExpression()!=null) {
+            sb.append(", \"exp\": \"" + expression.replace("\"","'") + "\"}");
+        } else {
+            sb.append("}");
+        }
 
         String spatioTemporalResult = sb.toString();
 

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 import static visualization.visualization.Visualize.dbSystem;
+import static visualization.visualization.Visualize.spark;
 
 
     @RestController
@@ -14,9 +15,9 @@ import static visualization.visualization.Visualize.dbSystem;
         @RequestMapping(value = "/db-connection/redis", method = RequestMethod.POST)
         @ResponseBody
         public String connectToRedis(@RequestBody Map<String, String> json) throws Exception {
-            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " + json.get("url") + " /// " + json.get("port") + " /// " + json.get("username") + " /// " + json.get("password"));
+            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " + json.get("url") + " /// " + json.get("port") + " /// " + json.get("username") + " /// " + json.get("password") + " /// ");
 
-            SparkSession spark = SparkSession
+            spark = SparkSession
                     .builder()
                     .appName("redis-df")
                     .master("local[*]")
@@ -24,7 +25,7 @@ import static visualization.visualization.Visualize.dbSystem;
                     .config("spark.redis.port", json.get("port"))
                     .getOrCreate();
 
-            dbSystem = NoSqlDbSystem.Redis().Builder().port(Integer.parseInt(json.get("port"))).sparkSession(spark).build();
+            dbSystem = NoSqlDbSystem.Redis().Builder().port(Integer.parseInt(json.get("port"))).sparkSession(spark).soTimeout(0).connectionTimeout(0).build();
             //localhost //6379
 
             return "Connected to Redis";
@@ -35,15 +36,7 @@ import static visualization.visualization.Visualize.dbSystem;
         public String connectToMongoDB(@RequestBody Map<String, String> json) throws Exception {
             System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " +json.get("url")  + " /// " +json.get("port") + " /// " + json.get("username") + " /// " + json.get("password") + " /// " + json.get("collection") + " /// " );
 
-//            dbSystem.closeConnection();
-
-//            SparkSession spark = SparkSession
-//                    .builder()
-//                    .appName("Application Name").master("local")
-//                    .config("spark.mongodb.input.uri", "mongodb://"+ json.get("username") +":"+ json.get("password") +"@"+ json.get("url") +":"+ json.get("port") +"/"+ json.get("dbName"))
-//                    .getOrCreate();
-
-            SparkSession spark = SparkSession
+            spark = SparkSession
                     .builder()
                     .appName("Application Name").master("local").config("spark.mongodb.input.database",json.get("dbName")).config("spark.mongodb.input.collection", json.get("collection"))
                     .config("spark.mongodb.input.uri", "mongodb://"+ json.get("username") +":"+ json.get("password") +"@"+ json.get("url") +":"+ json.get("port"))
@@ -51,9 +44,6 @@ import static visualization.visualization.Visualize.dbSystem;
 
             dbSystem = NoSqlDbSystem.MongoDB().Builder(json.get("username"),json.get("password"),json.get("dbName")).host(json.get("url")).port(Integer.parseInt(json.get("port"))).sparkSession(spark).build();
             //nikos //12345 //admin //127.0.0.1 //27017
-            if(dbSystem == null){
-                System.out.println("true");
-            }
 
             return "Connected to MongoDB";
         }
@@ -62,9 +52,9 @@ import static visualization.visualization.Visualize.dbSystem;
         @RequestMapping(value = "/db-connection/hbase", method = RequestMethod.POST)
         @ResponseBody
         public String connectToHBASE(@RequestBody Map<String, String> json) throws Exception {
-            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " + json.get("url") + " /// " + json.get("port") + " /// " + json.get("username") + " /// " + json.get("password"));
+            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " + json.get("url") + " /// " + json.get("port") + " /// " + json.get("username") + " /// " + json.get("password") + " /// ");
 
-            SparkSession spark = SparkSession
+            spark = SparkSession
                         .builder()
                         .appName("Application Name").master("local")
                         .getOrCreate();
@@ -82,9 +72,9 @@ import static visualization.visualization.Visualize.dbSystem;
         @RequestMapping(value = "/db-connection/neo4j", method = RequestMethod.POST)
         @ResponseBody
         public String connectToNeo4j(@RequestBody Map<String, String> json) throws Exception {
-            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " + json.get("url") + " /// " + json.get("port") + " /// " + json.get("username") + " /// " + json.get("password"));
+            System.out.println(json.get("db") + " /// " + json.get("dbName") + " /// " + json.get("url") + " /// " + json.get("port") + " /// " + json.get("username") + " /// " + json.get("password") + " /// ");
 
-            SparkSession spark = SparkSession
+            spark = SparkSession
                         .builder()
                         .appName("Application Name").master("local")
                         .config("spark.neo4j.user", json.get("username"))
@@ -92,10 +82,26 @@ import static visualization.visualization.Visualize.dbSystem;
                         .config("spark.neo4j.url","bolt://"+ json.get("url") +":" + json.get("port"))
                         .getOrCreate();
 
-                dbSystem = NoSqlDbSystem.Neo4j().Builder(json.get("username"), json.get("password")).host(json.get("url")).port(Integer.parseInt(json.get("port"))).sparkSession(spark).build();
+             dbSystem = NoSqlDbSystem.Neo4j().Builder(json.get("username"), json.get("password")).host(json.get("url")).port(Integer.parseInt(json.get("port"))).sparkSession(spark).build();
                 //neo4j //nikos //localhost //7687
 
             return "Connected to Neo4j";
+        }
+
+
+        @RequestMapping(value = "/close-connection", method = RequestMethod.POST)
+        @ResponseBody
+        public String closeConnection(@RequestBody Map<String, String> json) throws Exception {
+            System.out.println(" /// " + json.get("hasAlreadyConnection") + " /// ");
+
+            System.out.println(" /// DISCONECTED /// ");
+
+            spark.close();
+            dbSystem.closeConnection();
+
+            System.out.println(" /// DISCONECTED 1 /// ");
+
+            return "Connection Closed";
         }
 
 

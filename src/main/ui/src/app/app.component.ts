@@ -38,6 +38,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
     log.debug('init');
 
+    const valueToLocalStorage = {
+      conn: false
+    }
+    localStorage.setItem('hasAlreadyConnection', JSON.stringify(valueToLocalStorage));
+
     // Setup translations
     this.i18nService.init(
       environment.defaultLanguage,

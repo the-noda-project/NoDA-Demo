@@ -14,12 +14,15 @@ export class DbconnectionPopUpComponent implements OnInit {
   db: string;
   imageOfDB: string;
 
+  spinerIsActive: boolean = false;
+
   dbName: string;
   url: string;
   port: number;
   username: string;
   password: string;
   collection: string;
+  hasAlreadyConnection: boolean;
 
   constructor(
     private modal: NgbModal,
@@ -30,6 +33,9 @@ export class DbconnectionPopUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectImageOfDB();
+    this.hasAlreadyConnection = JSON.parse(
+      localStorage.getItem('hasAlreadyConnection')
+    )['conn'];
   }
 
   selectImageOfDB() {
@@ -48,6 +54,22 @@ export class DbconnectionPopUpComponent implements OnInit {
   }
 
   goToVisualization() {
+    this.spinerIsActive = true;
+    if (this.hasAlreadyConnection) {
+      this.quoteService
+        .disconnectFromDB(this.hasAlreadyConnection)
+        .then((res) => {
+          this.connectToDBs();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      this.connectToDBs();
+    }
+  }
+
+  connectToDBs() {
     if (
       this.db === 'mongodb' ||
       this.db === 'neo4j' ||
@@ -65,16 +87,27 @@ export class DbconnectionPopUpComponent implements OnInit {
           this.collection
         )
         .then((res) => {
+          const valueToLocalStorage = {
+            conn: true,
+          };
+          localStorage.setItem(
+            'hasAlreadyConnection',
+            JSON.stringify(valueToLocalStorage)
+          );
+
+          this.spinerIsActive = false;
           this.modal.dismissAll();
           console.log(res);
           this.router.navigate(['/visualization/dbtype/' + this.db]);
         })
         .catch((err) => {
-          this.toast.error('Error', err);
+          this.toast.error('Error', 'Authentication Failure');
+          this.spinerIsActive = false;
           console.log(err);
         });
     } else {
       this.toast.error('Error', 'Please choose a database first to continue.');
+      this.spinerIsActive = false;
     }
   }
 

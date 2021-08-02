@@ -30,7 +30,8 @@ export class QuoteService {
     port?: number,
     username?: string,
     password?: string,
-    collection?: string
+    collection?: string,
+    hasAlreadyConnection?: boolean
   ) {
     const body = {
       db: db,
@@ -39,7 +40,8 @@ export class QuoteService {
       port: port,
       username: username,
       password: password,
-      collection: collection
+      collection: collection,
+      hasAlreadyConnection: hasAlreadyConnection
     };
 
     return this.httpClient
@@ -47,15 +49,16 @@ export class QuoteService {
       .toPromise();
   }
 
-  // getNodaSTData() {
-  //   return this.httpClient
-  //     .get('/noda-st-timelapse', { responseType: 'text' })
-  //     .toPromise();
-  // }
+  disconnectFromDB(
+    hasAlreadyConnection?: boolean
+  ) {
+    const body = {
+      hasAlreadyConnection: hasAlreadyConnection
+    };
 
-  // getNodaSpatialData() {
-  //   return this.httpClient
-  //     .get('/noda-spatial', { responseType: 'text' })
-  //     .toPromise();
-  // }
+    return this.httpClient
+      .post('/close-connection', body, { responseType: 'text' })
+      .toPromise();
+  }
+
 }

@@ -18,6 +18,7 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class QueryConstructionComponent implements OnInit {
   query: string;
+  NoSQLExpression: string =  'Not available yet.';
 
   // queryToRunMongo: string =
   //   'SELECT* FROM car WHERE GEO_RECTANGLE(location, [(13.263160139322283, 52.49997397893388),(13.306762129068376, 52.52113031608697)] )';
@@ -46,9 +47,9 @@ export class QueryConstructionComponent implements OnInit {
   // redisActualQuery: string =
   //   'FilterList AND (2/2): [FilterList AND (2/2): [PrefixFilter u336w, CircleFilter (location, longitude, latitude, (13.272429853677751 52.509430292042886),1)], FilterList OR (0/0): []]';
 
-  selectValue: string;
-  fromValue: string;
-  whereValue: string;
+  selectValue: string = "default";
+  fromValue: string = "default";
+  whereValue: string = "default";
 
   objectIdFieldName: string;
   objectLocationFieldName: string;
@@ -105,7 +106,6 @@ export class QueryConstructionComponent implements OnInit {
   isActualDBTabOpen: boolean = true;
 
   drawItems: L.FeatureGroup = L.featureGroup();
-  actualQuery = 'Not available yet.';
 
   drawOptions = {
     edit: {
@@ -141,7 +141,7 @@ export class QueryConstructionComponent implements OnInit {
       'STHilbertIndex',
     ],
     hbase: ['cf:vehicle', 'location:date', 'location'],
-    redis: ['_id', 'localDate', 'location:longitude', 'location:latitude'],
+    redis: ['_id', 'localDate', 'location'],
   };
 
   map: L.Map;
@@ -159,6 +159,7 @@ export class QueryConstructionComponent implements OnInit {
     this.windowBetweenFloorAndCeil = 3;
     this.changeFloor = false;
     this.changeCeil = false;
+    this.query = null;
 
     this.activeRoute.paramMap.subscribe((params: any) => {
       this.activeDatabase = params.get('dbType');
@@ -179,25 +180,6 @@ export class QueryConstructionComponent implements OnInit {
 
   openCloseActualDBTab() {
     this.isActualDBTabOpen = !this.isActualDBTabOpen;
-  }
-
-  goToOtherDb(db: string) {
-    this.router.navigate(['/visualization/dbtype/' + db]);
-
-    this.dbChangeConnectorLoading = true;
-    this.query = null;
-    this.actualQuery = 'Not available yet.';
-    this.objectIdFieldName = 'default';
-    this.objectLocationFieldName = 'default';
-    this.objectTimeFieldName = 'default';
-
-    this.layers.splice(0, this.layers.length - 1);
-
-    this.chosenGeoSQLFunction = 'default';
-
-    setTimeout(() => {
-      this.dbChangeConnectorLoading = false;
-    }, 2000);
   }
 
   openModalForDBConnection(db: string) {
@@ -244,7 +226,7 @@ export class QueryConstructionComponent implements OnInit {
       var theRadius = layer.getRadius();
 
       console.log('radius: ', theRadius, 'Center: ', theCenterPt.lat);
-      this.radius = theRadius;
+      this.radius = theRadius/1000;
       this.lat = theCenterPt.lat;
       this.lon = theCenterPt.lng;
     }
@@ -307,12 +289,13 @@ export class QueryConstructionComponent implements OnInit {
             .spatialSqlQueryPost(this.query, 'vehicle', 'location')
             .then((res) => {
               this.query = this.query;
-              this.actualQuery = this.query;
 
               console.log(res);
               const data = JSON.parse(res);
               if (data['status'] === 'ok') {
                 this.isLoading = false;
+                this.NoSQLExpression = data['exp'];
+                
                 this.quoteService.updateData(res);
                 // Take data from serve from quoteService
                 this.dataFromServer = this.quoteService.getData();
@@ -405,11 +388,11 @@ export class QueryConstructionComponent implements OnInit {
                 this.radius +
                 ' , ' +
                 this.objectTimeFieldName +
-                ' , ' +
+                ' , \'' +
                 this.minTimestamp +
-                ' , ' +
+                '\' , \'' +
                 this.maxTimestamp +
-                ' )';
+                '\' )';
               console.log(this.query);
             } else {
               this.query =
@@ -429,11 +412,11 @@ export class QueryConstructionComponent implements OnInit {
                 this.lat1 +
                 ' )], ' +
                 this.objectTimeFieldName +
-                ' , ' +
+                ' , \'' +
                 this.minTimestamp +
-                ' , ' +
+                '\' , \'' +
                 this.maxTimestamp +
-                ' )';
+                '\' )';
               console.log(this.query);
             }
 
@@ -451,7 +434,7 @@ export class QueryConstructionComponent implements OnInit {
                 if (data['status'] === 'ok') {
                   this.isLoading = false;
                   this.query = this.query;
-                  this.actualQuery = this.query;
+                  this.NoSQLExpression = data['exp'];
                   this.quoteService.updateData(res);
                   // Take data from serve from quoteService
                   this.dataFromServer = this.quoteService.getData();
@@ -615,17 +598,6 @@ export class QueryConstructionComponent implements OnInit {
             stroke: false,
             fillOpacity: 1,
           })
-          // .bindPopup(
-          //   `<div>CraftID: ` +
-          //     craftID +
-          //     `</div>` +
-          //     `<div>TimeStamp: ` +
-          //     TimeStamp +
-          //     `</div>` +
-          //     `<div>Speed: ` +
-          //     Speed +
-          //     `</div>`
-          // )
         );
       } else {
         let myIcon = L.divIcon({
@@ -643,17 +615,6 @@ export class QueryConstructionComponent implements OnInit {
             stroke: false,
             fillOpacity: 1,
           })
-          // .bindPopup(
-          //   `<div>CraftID: ` +
-          //     craftID +
-          //     `</div>` +
-          //     `<div>TimeStamp: ` +
-          //     TimeStamp +
-          //     `</div>` +
-          //     `<div>Speed: ` +
-          //     Speed +
-          //     `</div>`
-          // )
         );
 
         this.layers.push(
@@ -666,17 +627,6 @@ export class QueryConstructionComponent implements OnInit {
             stroke: false,
             fillOpacity: 1,
           })
-          // .bindPopup(
-          //   `<div>CraftID: ` +
-          //     craftID +
-          //     `</div>` +
-          //     `<div>TimeStamp: ` +
-          //     TimeStamp +
-          //     `</div>` +
-          //     `<div>Speed: ` +
-          //     Speed +
-          //     `</div>`
-          // )
         );
       }
     });
@@ -723,21 +673,7 @@ export class QueryConstructionComponent implements OnInit {
               L.marker([lat, lon], {
                 icon: myIcon,
               })
-              // .bindPopup(
-              //   `<div>CraftID: ` +
-              //     craftID +
-              //     `</div>` +
-              //     `<div>TimeStamp: ` +
-              //     TimeStamp +
-              //     `</div>` +
-              //     `<div>Speed: ` +
-              //     Speed +
-              //     `</div>`
-              // )
             );
-            // this.value = parseInt(this.timestampManipulation(time));
-            // this.maxValue = this.value + this.windowBetweenFloorAndCeil * 60 * 60 * 1000;
-            // this.map.panTo(new L.LatLng(lat, lon));
           });
         }
         this.value = parseInt(this.timestampManipulation(key));

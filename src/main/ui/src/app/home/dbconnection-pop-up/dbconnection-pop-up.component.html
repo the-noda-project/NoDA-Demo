@@ -12,7 +12,7 @@
   </div>
   <div class="molad-body p-3">
     <div class="row w-100 m-0">
-      <div class="col-12 mb-2">
+      <div class="col-12 mb-2" *ngIf="db === 'mongodb'">
         <label>Database</label>
         <input
           class="form-control inputStyle"
@@ -20,7 +20,7 @@
           placeholder="Database"
         />
       </div>
-      <div class="col-12 mb-2">
+      <div class="col-12 mb-2" *ngIf="db === 'mongodb'">
         <label>Collection</label>
         <input
           class="form-control inputStyle"
@@ -28,7 +28,7 @@
           placeholder="Collection"
         />
       </div>
-      <div class="col-6">
+      <div class="col-6" *ngIf="db === 'mongodb' || db === 'neo4j' || db === 'redis'">
         <label>Url</label>
         <input
           class="form-control inputStyle"
@@ -36,7 +36,7 @@
           placeholder="Url"
         />
       </div>
-      <div class="col-6">
+      <div class="col-6" *ngIf="db === 'mongodb' || db === 'neo4j' || db === 'hbase' || db === 'redis'">
         <label>Port</label>
         <input
           class="form-control inputStyle"
@@ -44,7 +44,7 @@
           placeholder="Port"
         />
       </div>
-      <div class="col-6 mt-2" *ngIf="db !== 'hbase' && db !== 'redis'">
+      <div class="col-6 mt-2" *ngIf="db === 'mongodb' || db === 'neo4j'">
         <label>Username</label>
         <input
           class="form-control inputStyle"
@@ -52,7 +52,7 @@
           placeholder="Username"
         />
       </div>
-      <div class="col-6 mt-2" *ngIf="db !== 'hbase' && db !== 'redis'">
+      <div class="col-6 mt-2" *ngIf="db === 'mongodb' || db === 'neo4j'">
         <label>Password</label>
         <input
           class="form-control inputStyle"
@@ -76,7 +76,11 @@
       (click)="goToVisualization()"
       style="color: #14274e; font-size: 1rem; border: 2px solid #14274e;"
     >
-      Connect
+      Connect <i
+      style="font-size: 0.9rem;"
+      *ngIf="spinerIsActive"
+      class="fa fa-spinner fa-pulse fa-3x fa-fw"
+    ></i>
     </button>
   </div>
 </div>

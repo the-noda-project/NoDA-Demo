@@ -3,6 +3,7 @@ package visualization.visualization;
 import gr.ds.unipi.noda.api.client.NoSqlDbSystem;
 import gr.ds.unipi.noda.api.core.dataframe.visualization.DataframeManipulator;
 import gr.ds.unipi.noda.api.core.nosqldb.NoSqlDbOperators;
+import org.apache.spark.sql.SparkSession;
 import visualization.server.ServerManager;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -12,6 +13,7 @@ import java.util.List;
 public class Visualize {
 
     public static gr.ds.unipi.noda.api.client.NoSqlDbSystem dbSystem;
+    public static SparkSession spark;
     public static Dataset<Row> datare;
     public static String stDataToVisualize;
     public static String spatialDataToVisualize;
