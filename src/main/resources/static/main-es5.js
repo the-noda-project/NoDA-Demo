@@ -3100,7 +3100,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "\n      v_1.0.7\n    ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "\n      v_1.0.8\n    ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
