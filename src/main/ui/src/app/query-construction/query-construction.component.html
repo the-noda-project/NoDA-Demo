@@ -131,14 +131,14 @@
           <div class="row w-100 m-0 pb-2" style="color: #14274e; font-weight: 600; font-size: 1.2rem;">
             Nodes - Labels
           </div>
-          <div class="row w-100 m-0 pt-2 pb-2">
+          <!-- <div class="row w-100 m-0 pt-2 pb-2">
             <div class="col-auto m-1 schemaStyle">
               2.965.074
             </div>
             <div class="col-auto m-1 schemaStyle">
-              car
+              passengerCars
             </div>
-          </div>
+          </div> -->
           <div class="row w-100 m-0 pt-5 pb-2" style="color: #14274e; font-weight: 600; font-size: 1.2rem;">
             Relationship Types
           </div>
@@ -229,10 +229,10 @@
               vehicle
             </div>
             <div class="col-auto m-1 schemaStyle">
-              longitude
+              location:longitude
             </div>
             <div class="col-auto m-1 schemaStyle">
-              latitude
+              location:latitude
             </div>
             <div class="col-auto m-1 schemaStyle">
               date
@@ -290,18 +290,18 @@
                   <select class="selectStyle ml-2 p-2" *ngIf="activeDatabase === 'hbase'">
                     <option value="default" disabled></option>
                     <option value="*">*</option>
-                    <option *ngFor="let hbaseProp of dropDownProps.hbase" value="{{ hbaseProp }}">{{ hbaseProp }}
+                    <option *ngFor="let hbaseProp of dropDownProps.hbaseID" value="{{ hbaseProp }}">{{ hbaseProp }}
                     </option>
                   </select>
                   <select class="selectStyle ml-2 p-2" *ngIf="activeDatabase === 'redis'">
                     <option value="default" disabled></option>
                     <option value="*">*</option>
-                    <option *ngFor="let redisProp of dropDownProps.redis" value="{{ redisProp }}">{{ redisProp }}
+                    <option *ngFor="let redisProp of dropDownProps.redisID" value="{{ redisProp }}">{{ redisProp }}
                     </option>
                   </select>
-                  <button class="btn btn-link ml-2">
+                  <!-- <button class="btn btn-link ml-2">
                     <i class="fas fa-plus" style="color: #14274e;"></i>
-                  </button>
+                  </button> -->
                 </div>
 
                 <!-- FROM -->
@@ -311,15 +311,14 @@
                   </select>
                   <select class="selectStyle ml-2 p-2" [(ngModel)]="fromValue">
                     <option *ngIf="activeDatabase === 'default'" value="default" disabled>-</option>
-                    <option *ngIf="activeDatabase === 'neo4j'" value="car">car</option>
-                    <option *ngIf="activeDatabase === 'mongodb'" value="car">car</option>
+                    <option *ngIf="activeDatabase === 'neo4j'" value="passengerCars">passengerCars</option>
                     <option *ngIf="activeDatabase === 'mongodb'" value="passengerCars">passengerCars</option>
-                    <option *ngIf="activeDatabase === 'hbase'" value="car">car</option>
-                    <option *ngIf="activeDatabase === 'redis'" value="_id">_id</option>
+                    <option *ngIf="activeDatabase === 'hbase'" value="passengerCars">passengerCars</option>
+                    <option *ngIf="activeDatabase === 'redis'" value="passengerCars">passengerCars</option>
                   </select>
-                  <button class="btn btn-link ml-2">
+                  <!-- <button class="btn btn-link ml-2">
                     <i class="fas fa-plus" style="color: #14274e;"></i>
-                  </button>
+                  </button> -->
                 </div>
 
                 <!-- WHERE -->
@@ -334,9 +333,9 @@
                     <option value="GEO_CIRCLE_KM">GEO_CIRCLE_KM</option>
                     <option value="GEO_TEMPORAL_CIRCLE_KM">GEO_TEMPORAL_CIRCLE_KM</option>
                   </select>
-                  <button class="btn btn-link ml-2">
+                  <!-- <button class="btn btn-link ml-2">
                     <i class="fas fa-plus" style="color: #14274e;"></i>
-                  </button>
+                  </button> -->
                 </div>
 
                 <!-- Id field -->
@@ -369,12 +368,12 @@
                         </select>
                         <select class="selectStyle ml-2 p-2" *ngIf="activeDatabase === 'hbase'"
                           [(ngModel)]="objectIdFieldName">
-                          <option *ngFor="let hbaseProp of dropDownProps.hbase" value="{{ hbaseProp }}">{{ hbaseProp }}
+                          <option *ngFor="let hbaseProp of dropDownProps.hbaseID" value="{{ hbaseProp }}">{{ hbaseProp }}
                           </option>
                         </select>
                         <select class="selectStyle ml-2 p-2" *ngIf="activeDatabase === 'redis'"
                           [(ngModel)]="objectIdFieldName">
-                          <option *ngFor="let redisProp of dropDownProps.redis" value="{{ redisProp }}">{{ redisProp }}
+                          <option *ngFor="let redisProp of dropDownProps.redisID" value="{{ redisProp }}">{{ redisProp }}
                           </option>
                         </select>
                       </div>
@@ -449,12 +448,12 @@
                         </select>
                         <select class="selectStyle ml-2 p-2" *ngIf="activeDatabase === 'hbase'"
                           [(ngModel)]="objectTimeFieldName">
-                          <option *ngFor="let hbaseProp of dropDownProps.hbase" value="{{ hbaseProp }}">{{ hbaseProp }}
+                          <option *ngFor="let hbaseProp of dropDownProps.hbaseID" value="{{ hbaseProp }}">{{ hbaseProp }}
                           </option>
                         </select>
                         <select class="selectStyle ml-2 p-2" *ngIf="activeDatabase === 'redis'"
                           [(ngModel)]="objectTimeFieldName">
-                          <option *ngFor="let redisProp of dropDownProps.redis" value="{{ redisProp }}">{{ redisProp }}
+                          <option *ngFor="let redisProp of dropDownProps.redisID" value="{{ redisProp }}">{{ redisProp }}
                           </option>
                         </select>
                       </div>
@@ -480,11 +479,11 @@
               </div>
 
               <div class="row w-100 m-0 pb-3" *ngIf="isQueryConstructorTabOpen">
-                <div class="col-auto align-self-center">
+                <!-- <div class="col-auto align-self-center">
                   <button class="btn btn-link" style="color: #14274e; font-weight: 300;">
                     Add SQL line +
                   </button>
-                </div>
+                </div> -->
                 <div class="col text-right align-self-center">
                   <!-- spatial BuTTON RUN -->
                   <button class="btn btn-primary" style="background-color: #14274e;" (click)="runSpatialQuery()" *ngIf="

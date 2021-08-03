@@ -140,16 +140,18 @@ export class QueryConstructionComponent implements OnInit {
       'HilbertIndex',
       'STHilbertIndex',
     ],
-    hbase: ['cf:vehicle', 'location:date', 'location'],
-    redis: ['_id', 'localDate', 'location'],
+    hbase: ['location:vehicle', 'location:date', 'location'],
+    hbaseID: ['location:vehicle', 'location:date', 'location:latitude', 'location:longitude'],
+    redis: ['vehicle', 'date', 'location'],
+    redisID: ['vehicle', 'date', 'location:longitude', 'location:latitude'],
   };
 
   map: L.Map;
   layers: Array<any> = [];
   options = {
-    layers: [L.tileLayer(themeFromMapBox, { maxZoom: 18, attribution: '...' })],
+    layers: [L.tileLayer(themeFromMapBox, { maxZoom: 12, attribution: '...' })],
     zoom: 14,
-    center: L.latLng(52.5067614, 13.2846506),
+    center: L.latLng(38.3159583, 22.6079104),
   };
 
   ngOnInit(): void {
