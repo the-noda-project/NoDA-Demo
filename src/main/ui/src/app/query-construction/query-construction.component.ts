@@ -149,8 +149,8 @@ export class QueryConstructionComponent implements OnInit {
   map: L.Map;
   layers: Array<any> = [];
   options = {
-    layers: [L.tileLayer(themeFromMapBox, { maxZoom: 12, attribution: '...' })],
-    zoom: 14,
+    layers: [L.tileLayer(themeFromMapBox, { maxZoom: 25, attribution: '...' })],
+    zoom: 8,
     center: L.latLng(38.3159583, 22.6079104),
   };
 

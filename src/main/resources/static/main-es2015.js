@@ -3971,8 +3971,8 @@ class QueryConstructionComponent {
         };
         this.layers = [];
         this.options = {
-            layers: [leaflet__WEBPACK_IMPORTED_MODULE_3__["tileLayer"](_shell_shell_service__WEBPACK_IMPORTED_MODULE_2__["themeFromMapBox"], { maxZoom: 12, attribution: '...' })],
-            zoom: 14,
+            layers: [leaflet__WEBPACK_IMPORTED_MODULE_3__["tileLayer"](_shell_shell_service__WEBPACK_IMPORTED_MODULE_2__["themeFromMapBox"], { maxZoom: 25, attribution: '...' })],
+            zoom: 8,
             center: leaflet__WEBPACK_IMPORTED_MODULE_3__["latLng"](38.3159583, 22.6079104),
         };
     }
