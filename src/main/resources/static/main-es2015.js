@@ -4091,7 +4091,7 @@ class QueryConstructionComponent {
                         console.log(this.query);
                     }
                     this.queryConstructionServ
-                        .spatialSqlQueryPost(this.query, 'vehicle', 'location')
+                        .spatialSqlQueryPost(this.query, this.objectIdFieldName, this.objectLocationFieldName)
                         .then((res) => {
                         this.query = this.query;
                         console.log(res);
@@ -4210,7 +4210,7 @@ class QueryConstructionComponent {
                         }
                         this.isLoading = true;
                         this.queryConstructionServ
-                            .spatioTemporalSqlQueryPost(this.query, 'vehicle', 'location', 'date')
+                            .spatioTemporalSqlQueryPost(this.query, this.objectIdFieldName, this.objectLocationFieldName, this.objectTimeFieldName)
                             .then((res) => {
                             console.log(res);
                             const data = JSON.parse(res);

@@ -7864,7 +7864,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   console.log(this.query);
                 }
 
-                this.queryConstructionServ.spatialSqlQueryPost(this.query, 'vehicle', 'location').then(function (res) {
+                this.queryConstructionServ.spatialSqlQueryPost(this.query, this.objectIdFieldName, this.objectLocationFieldName).then(function (res) {
                   _this8.query = _this8.query;
                   console.log(res);
                   var data = JSON.parse(res);
@@ -7942,7 +7942,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   }
 
                   this.isLoading = true;
-                  this.queryConstructionServ.spatioTemporalSqlQueryPost(this.query, 'vehicle', 'location', 'date').then(function (res) {
+                  this.queryConstructionServ.spatioTemporalSqlQueryPost(this.query, this.objectIdFieldName, this.objectLocationFieldName, this.objectTimeFieldName).then(function (res) {
                     console.log(res);
                     var data = JSON.parse(res);
 
