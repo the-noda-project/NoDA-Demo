@@ -22,7 +22,7 @@ public class SqlQueryAPI {
     @RequestMapping(value = "/spatial-sql-query", method = RequestMethod.POST)
     @ResponseBody
     public String spatialSQLQueryPost(@RequestBody Map<String, String> json) throws Exception {
-        System.out.println(json.get("query") + " /// " +json.get("idFieldName")  + " /// " +json.get("locationFieldName")  );
+        System.out.println(json.get("query") + " /// " + json.get("idFieldName")  + " /// " +json.get("locationFieldName")  );
 
         if (json.get("idFieldName") == null) {
 

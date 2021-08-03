@@ -288,7 +288,7 @@ export class QueryConstructionComponent implements OnInit {
           }
 
           this.queryConstructionServ
-            .spatialSqlQueryPost(this.query, 'vehicle', 'location')
+            .spatialSqlQueryPost(this.query, this.objectIdFieldName, this.objectLocationFieldName)
             .then((res) => {
               this.query = this.query;
 
@@ -426,9 +426,9 @@ export class QueryConstructionComponent implements OnInit {
             this.queryConstructionServ
               .spatioTemporalSqlQueryPost(
                 this.query,
-                'vehicle',
-                'location',
-                'date'
+                this.objectIdFieldName, 
+                this.objectLocationFieldName,
+                this.objectTimeFieldName
               )
               .then((res) => {
                 console.log(res);
