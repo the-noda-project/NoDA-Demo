@@ -2545,6 +2545,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               console.log(res);
 
+              _this5.router.routeReuseStrategy.shouldReuseRoute = function () {
+                return false;
+              };
+
+              _this5.router.onSameUrlNavigation = 'reload';
+
               _this5.router.navigate(['/visualization/dbtype/' + _this5.db]);
             })["catch"](function (err) {
               _this5.toast.error('Error', 'Authentication Failure');
@@ -7225,13 +7231,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       };
     };
 
-    function QueryConstructionComponent_div_158_input_42_Template(rf, ctx) {
+    function QueryConstructionComponent_div_158_input_45_Template(rf, ctx) {
       if (rf & 1) {
         var _r166 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 127);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 128);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function QueryConstructionComponent_div_158_input_42_Template_input_ngModelChange_0_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function QueryConstructionComponent_div_158_input_45_Template_input_ngModelChange_0_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r166);
 
           var ctx_r165 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
@@ -7249,7 +7255,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function QueryConstructionComponent_div_158_span_44_Template(rf, ctx) {
+    function QueryConstructionComponent_div_158_span_47_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -7269,13 +7275,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function QueryConstructionComponent_div_158_i_46_Template(rf, ctx) {
+    function QueryConstructionComponent_div_158_i_49_Template(rf, ctx) {
       if (rf & 1) {
         var _r168 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "i", 128);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "i", 129);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QueryConstructionComponent_div_158_i_46_Template_i_click_0_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QueryConstructionComponent_div_158_i_49_Template_i_click_0_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r168);
 
           var ctx_r167 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
@@ -7287,13 +7293,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function QueryConstructionComponent_div_158_i_48_Template(rf, ctx) {
+    function QueryConstructionComponent_div_158_i_51_Template(rf, ctx) {
       if (rf & 1) {
         var _r170 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "i", 129);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "i", 130);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QueryConstructionComponent_div_158_i_48_Template_i_click_0_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QueryConstructionComponent_div_158_i_51_Template_i_click_0_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r170);
 
           var ctx_r169 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
@@ -7305,13 +7311,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function QueryConstructionComponent_div_158_input_53_Template(rf, ctx) {
+    function QueryConstructionComponent_div_158_input_56_Template(rf, ctx) {
       if (rf & 1) {
         var _r172 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 127);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 128);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function QueryConstructionComponent_div_158_input_53_Template_input_ngModelChange_0_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function QueryConstructionComponent_div_158_input_56_Template_input_ngModelChange_0_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r172);
 
           var ctx_r171 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
@@ -7329,7 +7335,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function QueryConstructionComponent_div_158_span_55_Template(rf, ctx) {
+    function QueryConstructionComponent_div_158_span_58_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -7349,13 +7355,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function QueryConstructionComponent_div_158_i_57_Template(rf, ctx) {
+    function QueryConstructionComponent_div_158_i_60_Template(rf, ctx) {
       if (rf & 1) {
         var _r174 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "i", 128);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "i", 129);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QueryConstructionComponent_div_158_i_57_Template_i_click_0_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QueryConstructionComponent_div_158_i_60_Template_i_click_0_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r174);
 
           var ctx_r173 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
@@ -7367,13 +7373,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function QueryConstructionComponent_div_158_i_59_Template(rf, ctx) {
+    function QueryConstructionComponent_div_158_i_62_Template(rf, ctx) {
       if (rf & 1) {
         var _r176 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "i", 129);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "i", 130);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QueryConstructionComponent_div_158_i_59_Template_i_click_0_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QueryConstructionComponent_div_158_i_62_Template_i_click_0_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r176);
 
           var ctx_r175 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
@@ -7439,7 +7445,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "\n                ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "\n\n                ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 113);
 
@@ -7447,7 +7453,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "span", 114);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Period Displayed :");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Period:");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -7463,43 +7469,51 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "\n                  ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](29, "date");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "span", 116);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](30, "date");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 116);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](31, "date");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "\n                    ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "i", 117);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "\n                  ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](32, "date");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, "\n                ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "\n                  ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 117);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, "\n                    ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](36, "i", 118);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37, "\n                  ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36, "\n                ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, "\n                ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "ng5-slider", 118);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("valueChange", function QueryConstructionComponent_div_158_Template_ng5_slider_valueChange_37_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "\n\n                ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "ng5-slider", 119);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("valueChange", function QueryConstructionComponent_div_158_Template_ng5_slider_valueChange_40_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r178);
 
           var ctx_r179 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
           return ctx_r179.value = $event;
-        })("highValueChange", function QueryConstructionComponent_div_158_Template_ng5_slider_highValueChange_37_listener($event) {
+        })("highValueChange", function QueryConstructionComponent_div_158_Template_ng5_slider_highValueChange_40_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r178);
 
           var ctx_r180 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
           return ctx_r180.maxValue = $event;
-        })("optionsChange", function QueryConstructionComponent_div_158_Template_ng5_slider_optionsChange_37_listener($event) {
+        })("optionsChange", function QueryConstructionComponent_div_158_Template_ng5_slider_optionsChange_40_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r178);
 
           var ctx_r181 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
@@ -7507,67 +7521,67 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return ctx_r181.opt = $event;
         });
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, "\n                ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, "\n                ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "\n                ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "\n                ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 119);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 120);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, "\n                  ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "\n                  ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](42, QueryConstructionComponent_div_158_input_42_Template, 1, 3, "input", 120);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](45, QueryConstructionComponent_div_158_input_45_Template, 1, 3, "input", 121);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, "\n                  ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "\n                  ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](44, QueryConstructionComponent_div_158_span_44_Template, 3, 4, "span", 121);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](47, QueryConstructionComponent_div_158_span_47_Template, 3, 4, "span", 122);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "\n                  ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "\n                  ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](46, QueryConstructionComponent_div_158_i_46_Template, 1, 0, "i", 122);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](49, QueryConstructionComponent_div_158_i_49_Template, 1, 0, "i", 123);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "\n                  ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "\n                  ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](48, QueryConstructionComponent_div_158_i_48_Template, 1, 0, "i", 123);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](51, QueryConstructionComponent_div_158_i_51_Template, 1, 0, "i", 124);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, "\n                ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "\n                ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 124);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "\n                  ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](53, QueryConstructionComponent_div_158_input_53_Template, 1, 3, "input", 120);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](54, "\n                  ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](55, QueryConstructionComponent_div_158_span_55_Template, 3, 4, "span", 121);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56, "\n                  ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](57, QueryConstructionComponent_div_158_i_57_Template, 1, 0, "i", 122);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](58, "\n                  ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](59, QueryConstructionComponent_div_158_i_59_Template, 1, 0, "i", 123);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60, "\n                ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "\n                ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](61, "\n                ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](53, "\n                ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "div", 125);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "div", 125);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "\n                  Window (hours) :\n                  ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "\n                  ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "input", 126);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](56, QueryConstructionComponent_div_158_input_56_Template, 1, 3, "input", 121);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function QueryConstructionComponent_div_158_Template_input_ngModelChange_64_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "\n                  ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](58, QueryConstructionComponent_div_158_span_58_Template, 3, 4, "span", 122);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "\n                  ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](60, QueryConstructionComponent_div_158_i_60_Template, 1, 0, "i", 123);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](61, "\n                  ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](62, QueryConstructionComponent_div_158_i_62_Template, 1, 0, "i", 124);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "\n                ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, "\n                ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "div", 126);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, "\n                  Window (hours) :\n                  ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "input", 127);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function QueryConstructionComponent_div_158_Template_input_ngModelChange_67_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r178);
 
           var ctx_r182 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
@@ -7577,19 +7591,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "\n                ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, "\n                ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, "\n                ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "\n                ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "div", 125);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 126);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, "\n                  FPS :\n                  ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, "\n                  FPS :\n                  ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "input", 126);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "input", 127);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function QueryConstructionComponent_div_158_Template_input_ngModelChange_69_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function QueryConstructionComponent_div_158_Template_input_ngModelChange_72_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r178);
 
           var ctx_r183 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
@@ -7599,19 +7613,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, "\n                ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "\n                ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, "\n              ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "\n              ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, "\n            ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "\n            ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "\n          ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "\n          ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
@@ -7619,11 +7633,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       if (rf & 2) {
         var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](30);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"]("\n                  ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](29, 17, ctx_r27.value, "dd/MM/yyyy HH:mm:ss"), " -\n                  ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](30, 20, ctx_r27.maxValue, "dd/MM/yyyy HH:mm:ss"), "\n                  ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"]("\n                    ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](31, 17, ctx_r27.value, "dd/MM/yyyy HH:mm:ss"), " -\n                    ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](32, 20, ctx_r27.maxValue, "dd/MM/yyyy HH:mm:ss"), "\n                  ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx_r27.value)("highValue", ctx_r27.maxValue)("options", ctx_r27.opt);
 
@@ -7704,9 +7718,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         // redisActualQuery: string =
         //   'FilterList AND (2/2): [FilterList AND (2/2): [PrefixFilter u336w, CircleFilter (location, longitude, latitude, (13.272429853677751 52.509430292042886),1)], FilterList OR (0/0): []]';
 
-        this.selectValue = "default";
-        this.fromValue = "default";
-        this.whereValue = "default";
+        this.selectValue = 'default';
+        this.fromValue = 'default';
+        this.whereValue = 'default';
         this.isLoading = false;
         this.chosenGeoSQLFunction = 'default';
         this.dbChangeConnectorLoading = false;
@@ -7833,6 +7847,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
         }
       }, {
+        key: "leafletDrawDeleted",
+        value: function leafletDrawDeleted(e) {
+          this.layers.splice(1, this.layers.length - 1);
+        }
+      }, {
         key: "drawLogic",
         value: function drawLogic(e) {
           var type = e.layerType,
@@ -7948,10 +7967,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 if (this.lat && this.lon) {
                   if (this.chosenGeoSQLFunction === 'GEO_TEMPORAL_CIRCLE_KM') {
                     // "SELECT* FROM car WHERE GEO_TEMPORAL_CIRCLE_KM(location, (13.285476118326189, 52.51026611136366), 1.5, date, '29/05/2007 12:00:00', '1/06/2007 12:00:00')";
-                    this.query = 'SELECT* FROM ' + this.fromValue + ' WHERE ' + this.chosenGeoSQLFunction + '( ' + this.objectLocationFieldName + ' , ( ' + this.lon + ' ,' + this.lat + ' ), ' + this.radius + ' , ' + this.objectTimeFieldName + ' , \'' + this.minTimestamp + '\' , \'' + this.maxTimestamp + '\' )';
+                    this.query = 'SELECT* FROM ' + this.fromValue + ' WHERE ' + this.chosenGeoSQLFunction + '( ' + this.objectLocationFieldName + ' , ( ' + this.lon + ' ,' + this.lat + ' ), ' + this.radius + ' , ' + this.objectTimeFieldName + " , '" + this.minTimestamp + "' , '" + this.maxTimestamp + "' )";
                     console.log(this.query);
                   } else {
-                    this.query = 'SELECT* FROM ' + this.fromValue + ' WHERE ' + this.chosenGeoSQLFunction + '( ' + this.objectLocationFieldName + ' ,[( ' + this.lon + ' , ' + this.lat + ' ) ,( ' + this.lon1 + ' , ' + this.lat1 + ' )], ' + this.objectTimeFieldName + ' , \'' + this.minTimestamp + '\' , \'' + this.maxTimestamp + '\' )';
+                    this.query = 'SELECT* FROM ' + this.fromValue + ' WHERE ' + this.chosenGeoSQLFunction + '( ' + this.objectLocationFieldName + ' ,[( ' + this.lon + ' , ' + this.lat + ' ) ,( ' + this.lon1 + ' , ' + this.lat1 + ' )], ' + this.objectTimeFieldName + " , '" + this.minTimestamp + "' , '" + this.maxTimestamp + "' )";
                     console.log(this.query);
                   }
 
@@ -8189,7 +8208,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-query-construction"]],
       decls: 170,
       vars: 32,
-      consts: [[1, "container-fluid", "p-0", 2, "min-height", "100vh", "max-height", "100vh", "min-width", "100vw"], [1, "row", "w-100", "m-0"], [1, "col-2", "p-0", 2, "min-height", "100vh", "max-height", "100vh", "border-right", "3px solid #14274e"], [1, "row", "w-100", "m-0", "d-flex", "justify-content-center", "align-items-center", "pointerToClick", 2, "height", "6rem", "border-bottom", "3px solid #14274e", 3, "click"], [1, "col-auto", "align-self-center"], ["src", "assets/neo4j_logo.png", "class", "img-fluid", "style", "width: 8rem;", 4, "ngIf"], ["src", "assets/MongoDB-Logo.png", "class", "img-fluid", "style", "width: 9rem; margin-top: -0.3rem !important;", 4, "ngIf"], ["src", "assets/hbase1.png", "class", "img-fluid", "style", "width: 8rem;", 4, "ngIf"], ["src", "assets/Redis_Logo.svg", "class", "img-fluid", "style", "width: 8rem;", 4, "ngIf"], ["style", "font-size: 1.2rem; margin-top: 0.4rem;", "class", "fas fa-angle-down", 4, "ngIf"], ["style", "font-size: 1.2rem; margin-top: 1.2rem;", "class", "fas fa-angle-up", 4, "ngIf"], ["class", "row m-0 d-flex justify-content-center align-items-center pointerToClick mt-3", 4, "ngIf"], [1, "row", "w-100", "m-0", 2, "position", "absolute", "top", "4rem"], [1, "col-12", "text-right", "pr-1"], ["class", "badge badge-success", 4, "ngIf"], ["class", "badge badge-warning text-white", 4, "ngIf"], [1, "row", "w-100", "m-0", "pt-3", "pb-3"], ["class", "col-12", 4, "ngIf"], [1, "col-10", "p-0", 2, "min-height", "100vh", "max-height", "100vh"], [1, "col-6", "pt-4", "pb-5", 2, "min-height", "100vh", "max-height", "100vh", "overflow-y", "auto !important"], [1, "col-12", "box"], [1, "row", "w-100", "m-0", "pointerToClick", "pt-3", "pb-3", 3, "click"], [2, "color", "#14274e", "font-weight", "600", "font-size", "1.2rem", "text-decoration", "underline"], [1, "col", "text-right", "align-self-center"], ["style", "font-size: 1.2rem;", "class", "fas fa-angle-down mt-2", 4, "ngIf"], ["style", "font-size: 1.2rem;", "class", "fas fa-angle-up mt-2", 4, "ngIf"], ["class", "row w-100 m-0 pt-3 pb-3", 4, "ngIf"], ["class", "row w-100 m-0 pb-3", 4, "ngIf"], [1, "col-12", "box", "mt-4"], [1, "col-12", "p-0", "pointerToClick", "pt-3", "pb-3", 3, "click"], [1, "row", "m-0"], [2, "color", "#14274e", "font-size", "0.9rem"], ["class", "row w-100 m-0 mt-1", 4, "ngIf"], ["style", "\n                      color: #14274e;\n                      font-weight: 600;\n                      font-size: 1.2rem;\n                      text-decoration: underline;\n                    ", 4, "ngIf"], [1, "col-6", "pr-0", 2, "min-height", "100vh", "max-height", "100vh"], ["class", "row w-100 m-0 p-0 webPlayerPositioning", 4, "ngIf"], ["leaflet", "", "leafletDraw", "", 2, "min-height", "100vh", "max-height", "100vh", "box-shadow", "-4px 0 10px 3px rgba(0, 0, 0, 0.221)", 3, "leafletOptions", "leafletLayers", "leafletDrawOptions", "leafletMapReady", "leafletDrawCreated"], [3, "leafletLayer"], ["src", "assets/neo4j_logo.png", 1, "img-fluid", 2, "width", "8rem"], ["src", "assets/MongoDB-Logo.png", 1, "img-fluid", 2, "width", "9rem", "margin-top", "-0.3rem !important"], ["src", "assets/hbase1.png", 1, "img-fluid", 2, "width", "8rem"], ["src", "assets/Redis_Logo.svg", 1, "img-fluid", 2, "width", "8rem"], [1, "fas", "fa-angle-down", 2, "font-size", "1.2rem", "margin-top", "0.4rem"], [1, "fas", "fa-angle-up", 2, "font-size", "1.2rem", "margin-top", "1.2rem"], [1, "row", "m-0", "d-flex", "justify-content-center", "align-items-center", "pointerToClick", "mt-3"], ["class", "col-12 p-0 bg-white openRowToChooseDB p-2", 4, "ngIf"], [1, "col-12", "p-0", "bg-white", "openRowToChooseDB", "p-2"], [1, "row", "w-100", "m-0", "p-2", "rowToChoose", 3, "click"], ["src", "assets/neo4j_logo.png", 1, "img-fluid", 2, "width", "6rem"], ["src", "assets/hbase1.png", 1, "img-fluid", 2, "width", "6rem"], ["src", "assets/Redis_Logo.svg", 1, "img-fluid", 2, "width", "6rem"], ["src", "assets/MongoDB-Logo.png", 1, "img-fluid", 2, "width", "6rem"], [1, "badge", "badge-success"], [1, "badge", "badge-warning", "text-white"], [1, "fa", "fa-spinner", "fa-pulse", "fa-3x", "fa-fw", 2, "font-size", "0.6rem"], [1, "col-12"], [1, "row", "w-100", "m-0", "pb-2", 2, "color", "#14274e", "font-weight", "600", "font-size", "1.2rem"], [1, "row", "w-100", "m-0", "pt-2", "pb-2"], [1, "col-auto", "m-1", "schemaStyle"], [1, "row", "w-100", "m-0", "pt-5", "pb-2", 2, "color", "#14274e", "font-weight", "600", "font-size", "1.2rem"], ["class", "col-auto m-1 schemaStyle", 4, "ngFor", "ngForOf"], [1, "fas", "fa-angle-down", "mt-2", 2, "font-size", "1.2rem"], [1, "fas", "fa-angle-up", "mt-2", 2, "font-size", "1.2rem"], [1, "col-12", "d-flex", "flex-nowrap", 2, "overflow-x", "auto"], [1, "selectStyle", "p-2"], ["value", "SELECT"], ["class", "selectStyle ml-2 p-2", 4, "ngIf"], [1, "col-12", "mt-3", "d-flex", "flex-nowrap", 2, "overflow-x", "auto"], ["value", "FROM"], [1, "selectStyle", "ml-2", "p-2", 3, "ngModel", "ngModelChange"], ["value", "default", "disabled", "", 4, "ngIf"], ["value", "passengerCars", 4, "ngIf"], ["value", "WHERE"], ["value", "default", "disabled", ""], ["value", "GEO_RECTANGLE"], ["value", "GEO_TEMPORAL_RECTANGLE"], ["value", "GEO_CIRCLE_KM"], ["value", "GEO_TEMPORAL_CIRCLE_KM"], [1, "whiteSpace", "p-2"], ["class", "row m-0", 4, "ngIf"], [1, "selectStyle", "ml-2", "p-2"], ["value", "*"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["value", "passengerCars"], [1, "col-auto", 2, "font-size", "0.9rem"], ["class", "ml-2", "style", "font-size: 0.7rem;", 4, "ngIf"], [1, "row", "w-100"], ["class", "selectStyle ml-2 p-2", 3, "ngModel", "ngModelChange", 4, "ngIf"], [1, "ml-2", 2, "font-size", "0.7rem"], [1, "col-12", 2, "font-size", "0.9rem"], [1, "col-auto", "pl-0"], ["class", "col pl-0 align-self-center", "style", "color: grey;", 4, "ngIf"], [1, "col", "pl-0", "align-self-center", 2, "color", "grey"], [1, "inputStyle", "ml-2", "p-2", 3, "ngModel", "ngModelChange"], [1, "row", "w-100", "m-0", "pb-3"], ["class", "btn btn-primary", "style", "background-color: #14274e;", 3, "click", 4, "ngIf"], [1, "btn", "btn-primary", 2, "background-color", "#14274e", 3, "click"], ["style", "font-size: 1rem;", "class", "fa fa-spinner fa-pulse fa-3x fa-fw", 4, "ngIf"], [1, "fas", "fa-angle-right", "ml-2", 2, "font-size", "1.2rem"], [1, "fa", "fa-spinner", "fa-pulse", "fa-3x", "fa-fw", 2, "font-size", "1rem"], [1, "row", "w-100", "m-0", "mt-1"], ["placeholder", "No query available yet.", 1, "mt-3", 3, "ngModel", "ngModelChange"], [1, "col-12", "text-right", "align-self-center", "pt-3", "pb-3"], [1, "col-12", 2, "color", "#14274e"], [1, "row", "w-100", "m-0", "p-0", "webPlayerPositioning"], [1, "col-12", 2, "box-shadow", "0 0 7px 2px rgba(0, 0, 0, 0.283) !important"], [1, "row", "w-100", "m-0", "p-2", 2, "background-color", "rgb(85, 85, 85)", "border-radius", "12px"], [1, "col-auto", "align-self-center", 2, "z-index", "1000"], [1, "btn", "btn-light", "font12", "mr-2", "p-0", "pl-2", "pr-2", 2, "padding-top", "2px", "padding-bottom", "2px", 3, "click"], [1, "fa", "fa-play"], [1, "btn", "btn-light", "font12", "mr-2", "p-0", "pl-2", "pr-2", 2, "padding-top", "2px", "padding-bottom", "2px"], [1, "fa", "fa-pause"], [1, "col-12", "p-0", "text-center", "text-white", "font14", 2, "position", "absolute", "top", "10px"], [1, "font-weight-bold", "mr-3"], [1, "fa", "fa-backward"], [1, "btn", "btn-light", "font12", "ml-2", "p-0", "pl-2", "pr-2", 2, "padding-top", "2px", "padding-bottom", "2px"], [1, "fa", "fa-forward"], [3, "value", "highValue", "options", "valueChange", "highValueChange", "optionsChange"], [1, "col-6", "pl-0", "text-white", "font12"], ["type", "datetime-local", "class", "inputOfDates", 3, "ngModel", "ngModelOptions", "ngModelChange", 4, "ngIf"], [4, "ngIf"], ["class", "fa fa-edit ml-2 pointerToClick", "style", "color: white !important;", 3, "click", 4, "ngIf"], ["class", "fa fa-check ml-2 pointerToClick", "style", "color: white !important;", 3, "click", 4, "ngIf"], [1, "col-6", "text-right", "pr-0", "text-white", "font12"], [1, "col-auto", "text-white", "font12", "mt-3", "pl-0"], ["type", "number", 1, "inputs", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["type", "datetime-local", 1, "inputOfDates", 3, "ngModel", "ngModelOptions", "ngModelChange"], [1, "fa", "fa-edit", "ml-2", "pointerToClick", 2, "color", "white !important", 3, "click"], [1, "fa", "fa-check", "ml-2", "pointerToClick", 2, "color", "white !important", 3, "click"]],
+      consts: [[1, "container-fluid", "p-0", 2, "min-height", "100vh", "max-height", "100vh", "min-width", "100vw"], [1, "row", "w-100", "m-0"], [1, "col-4", "col-md-2", "col-lg-2", "p-0", 2, "min-height", "100vh", "max-height", "100vh", "border-right", "3px solid #14274e"], [1, "row", "w-100", "m-0", "d-flex", "justify-content-center", "align-items-center", "pointerToClick", 2, "height", "6rem", "border-bottom", "3px solid #14274e", 3, "click"], [1, "col-auto", "align-self-center"], ["src", "assets/neo4j_logo.png", "class", "img-fluid", "style", "width: 8rem;", 4, "ngIf"], ["src", "assets/MongoDB-Logo.png", "class", "img-fluid", "style", "width: 9rem; margin-top: -0.3rem !important;", 4, "ngIf"], ["src", "assets/hbase1.png", "class", "img-fluid", "style", "width: 8rem;", 4, "ngIf"], ["src", "assets/Redis_Logo.svg", "class", "img-fluid", "style", "width: 8rem;", 4, "ngIf"], ["style", "font-size: 1.2rem; margin-top: 0.4rem;", "class", "fas fa-angle-down", 4, "ngIf"], ["style", "font-size: 1.2rem; margin-top: 1.2rem;", "class", "fas fa-angle-up", 4, "ngIf"], ["class", "row m-0 d-flex justify-content-center align-items-center pointerToClick mt-3", 4, "ngIf"], [1, "row", "w-100", "m-0", 2, "position", "absolute", "top", "4rem"], [1, "col-12", "text-right", "pr-1"], ["class", "badge badge-success", 4, "ngIf"], ["class", "badge badge-warning text-white", 4, "ngIf"], [1, "row", "w-100", "m-0", "pt-3", "pb-3"], ["class", "col-12", 4, "ngIf"], [1, "col-8", "col-md-10", "col-lg-10", "p-0", 2, "min-height", "100vh", "max-height", "100vh"], [1, "col-12", "col-md-6", "col-lg-5", "pt-4", "pb-5", 2, "min-height", "100vh", "max-height", "100vh", "overflow-y", "auto !important"], [1, "col-12", "box"], [1, "row", "w-100", "m-0", "pointerToClick", "pt-3", "pb-3", 3, "click"], [2, "color", "#14274e", "font-weight", "600", "font-size", "1.2rem", "text-decoration", "underline"], [1, "col", "text-right", "align-self-center"], ["style", "font-size: 1.2rem;", "class", "fas fa-angle-down mt-2", 4, "ngIf"], ["style", "font-size: 1.2rem;", "class", "fas fa-angle-up mt-2", 4, "ngIf"], ["class", "row w-100 m-0 pt-3 pb-3", 4, "ngIf"], ["class", "row w-100 m-0 pb-3", 4, "ngIf"], [1, "col-12", "box", "mt-4"], [1, "col-12", "p-0", "pointerToClick", "pt-3", "pb-3", 3, "click"], [1, "row", "m-0"], [2, "color", "#14274e", "font-size", "0.9rem"], ["class", "row w-100 m-0 mt-1", 4, "ngIf"], ["style", "\n                      color: #14274e;\n                      font-weight: 600;\n                      font-size: 1.2rem;\n                      text-decoration: underline;\n                    ", 4, "ngIf"], [1, "col-12", "col-md-6", "col-lg-7", "pr-0", 2, "min-height", "100vh", "max-height", "100vh"], ["class", "row w-100 m-0 p-0 webPlayerPositioning", 4, "ngIf"], ["leaflet", "", "leafletDraw", "", 2, "min-height", "100vh", "max-height", "100vh", "box-shadow", "-4px 0 10px 3px rgba(0, 0, 0, 0.221)", 3, "leafletOptions", "leafletLayers", "leafletDrawOptions", "leafletMapReady", "leafletDrawCreated", "leafletDrawDeleted"], [3, "leafletLayer"], ["src", "assets/neo4j_logo.png", 1, "img-fluid", 2, "width", "8rem"], ["src", "assets/MongoDB-Logo.png", 1, "img-fluid", 2, "width", "9rem", "margin-top", "-0.3rem !important"], ["src", "assets/hbase1.png", 1, "img-fluid", 2, "width", "8rem"], ["src", "assets/Redis_Logo.svg", 1, "img-fluid", 2, "width", "8rem"], [1, "fas", "fa-angle-down", 2, "font-size", "1.2rem", "margin-top", "0.4rem"], [1, "fas", "fa-angle-up", 2, "font-size", "1.2rem", "margin-top", "1.2rem"], [1, "row", "m-0", "d-flex", "justify-content-center", "align-items-center", "pointerToClick", "mt-3"], ["class", "col-12 p-0 bg-white openRowToChooseDB p-2", 4, "ngIf"], [1, "col-12", "p-0", "bg-white", "openRowToChooseDB", "p-2"], [1, "row", "w-100", "m-0", "p-2", "rowToChoose", 3, "click"], ["src", "assets/neo4j_logo.png", 1, "img-fluid", 2, "width", "6rem"], ["src", "assets/hbase1.png", 1, "img-fluid", 2, "width", "6rem"], ["src", "assets/Redis_Logo.svg", 1, "img-fluid", 2, "width", "6rem"], ["src", "assets/MongoDB-Logo.png", 1, "img-fluid", 2, "width", "6rem"], [1, "badge", "badge-success"], [1, "badge", "badge-warning", "text-white"], [1, "fa", "fa-spinner", "fa-pulse", "fa-3x", "fa-fw", 2, "font-size", "0.6rem"], [1, "col-12"], [1, "row", "w-100", "m-0", "pb-2", 2, "color", "#14274e", "font-weight", "600", "font-size", "1.2rem"], [1, "row", "w-100", "m-0", "pt-2", "pb-2"], [1, "col-auto", "m-1", "schemaStyle"], [1, "row", "w-100", "m-0", "pt-5", "pb-2", 2, "color", "#14274e", "font-weight", "600", "font-size", "1.2rem"], ["class", "col-auto m-1 schemaStyle", 4, "ngFor", "ngForOf"], [1, "fas", "fa-angle-down", "mt-2", 2, "font-size", "1.2rem"], [1, "fas", "fa-angle-up", "mt-2", 2, "font-size", "1.2rem"], [1, "col-12", "d-flex", "flex-nowrap", 2, "overflow-x", "auto"], [1, "selectStyle", "p-2"], ["value", "SELECT"], ["class", "selectStyle ml-2 p-2", 4, "ngIf"], [1, "col-12", "mt-3", "d-flex", "flex-nowrap", 2, "overflow-x", "auto"], ["value", "FROM"], [1, "selectStyle", "ml-2", "p-2", 3, "ngModel", "ngModelChange"], ["value", "default", "disabled", "", 4, "ngIf"], ["value", "passengerCars", 4, "ngIf"], ["value", "WHERE"], ["value", "default", "disabled", ""], ["value", "GEO_RECTANGLE"], ["value", "GEO_TEMPORAL_RECTANGLE"], ["value", "GEO_CIRCLE_KM"], ["value", "GEO_TEMPORAL_CIRCLE_KM"], [1, "whiteSpace", "p-2"], ["class", "row m-0", 4, "ngIf"], [1, "selectStyle", "ml-2", "p-2"], ["value", "*"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["value", "passengerCars"], [1, "col-auto", 2, "font-size", "0.9rem"], ["class", "ml-2", "style", "font-size: 0.7rem;", 4, "ngIf"], [1, "row", "w-100"], ["class", "selectStyle ml-2 p-2", 3, "ngModel", "ngModelChange", 4, "ngIf"], [1, "ml-2", 2, "font-size", "0.7rem"], [1, "col-12", 2, "font-size", "0.9rem"], [1, "col-auto", "pl-0"], ["class", "col pl-0 align-self-center", "style", "color: grey;", 4, "ngIf"], [1, "col", "pl-0", "align-self-center", 2, "color", "grey"], [1, "inputStyle", "ml-2", "p-2", 3, "ngModel", "ngModelChange"], [1, "row", "w-100", "m-0", "pb-3"], ["class", "btn btn-primary", "style", "background-color: #14274e;", 3, "click", 4, "ngIf"], [1, "btn", "btn-primary", 2, "background-color", "#14274e", 3, "click"], ["style", "font-size: 1rem;", "class", "fa fa-spinner fa-pulse fa-3x fa-fw", 4, "ngIf"], [1, "fas", "fa-angle-right", "ml-2", 2, "font-size", "1.2rem"], [1, "fa", "fa-spinner", "fa-pulse", "fa-3x", "fa-fw", 2, "font-size", "1rem"], [1, "row", "w-100", "m-0", "mt-1"], ["placeholder", "No query available yet.", 1, "mt-3", 3, "ngModel", "ngModelChange"], [1, "col-12", "text-right", "align-self-center", "pt-3", "pb-3"], [1, "col-12", 2, "color", "#14274e"], [1, "row", "w-100", "m-0", "p-0", "webPlayerPositioning"], [1, "col-12", 2, "box-shadow", "0 0 7px 2px rgba(0, 0, 0, 0.283) !important"], [1, "row", "w-100", "m-0", "p-2", 2, "background-color", "rgb(85, 85, 85)", "border-radius", "12px"], [1, "col-12", "col-md-12", "col-lg-auto", "align-self-center", 2, "z-index", "1000"], [1, "btn", "btn-light", "font12", "mr-2", "p-0", "pl-2", "pr-2", 2, "padding-top", "2px", "padding-bottom", "2px", 3, "click"], [1, "fa", "fa-play"], [1, "btn", "btn-light", "font12", "mr-2", "p-0", "pl-2", "pr-2", 2, "padding-top", "2px", "padding-bottom", "2px"], [1, "fa", "fa-pause"], [1, "col-12", "col-md-12", "pt-2", "pt-lg-0", "col-lg", "p-0", "text-center", "align-self-center", "text-white", "font14"], [1, "font-weight-bold", "mr-3"], [1, "fa", "fa-backward"], [2, "font-size", "0.8rem"], [1, "btn", "btn-light", "font12", "ml-2", "p-0", "pl-2", "pr-2", 2, "padding-top", "2px", "padding-bottom", "2px"], [1, "fa", "fa-forward"], [3, "value", "highValue", "options", "valueChange", "highValueChange", "optionsChange"], [1, "col-6", "pl-0", "text-white", "font12"], ["type", "datetime-local", "class", "inputOfDates", 3, "ngModel", "ngModelOptions", "ngModelChange", 4, "ngIf"], [4, "ngIf"], ["class", "fa fa-edit ml-2 pointerToClick", "style", "color: white !important;", 3, "click", 4, "ngIf"], ["class", "fa fa-check ml-2 pointerToClick", "style", "color: white !important;", 3, "click", 4, "ngIf"], [1, "col-6", "text-right", "pr-0", "text-white", "font12"], [1, "col-auto", "text-white", "font12", "mt-3", "pl-0"], ["type", "number", 1, "inputs", 3, "ngModel", "ngModelOptions", "ngModelChange"], ["type", "datetime-local", 1, "inputOfDates", 3, "ngModel", "ngModelOptions", "ngModelChange"], [1, "fa", "fa-edit", "ml-2", "pointerToClick", 2, "color", "white !important", 3, "click"], [1, "fa", "fa-check", "ml-2", "pointerToClick", 2, "color", "white !important", 3, "click"]],
       template: function QueryConstructionComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -8576,7 +8595,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](157, "\n          ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](158, QueryConstructionComponent_div_158_Template, 74, 25, "div", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](158, QueryConstructionComponent_div_158_Template, 77, 25, "div", 35);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](159, "\n\n          ");
 
@@ -8588,6 +8607,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return ctx.onMapReady($event);
           })("leafletDrawCreated", function QueryConstructionComponent_Template_div_leafletDrawCreated_161_listener($event) {
             return ctx.onDrawCreated($event);
+          })("leafletDrawDeleted", function QueryConstructionComponent_Template_div_leafletDrawDeleted_161_listener($event) {
+            return ctx.leafletDrawDeleted($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](162, "\n            ");
@@ -8743,7 +8764,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       },
       directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _asymmetrik_ngx_leaflet__WEBPACK_IMPORTED_MODULE_11__["LeafletDirective"], _asymmetrik_ngx_leaflet_draw__WEBPACK_IMPORTED_MODULE_12__["LeafletDrawDirective"], _asymmetrik_ngx_leaflet__WEBPACK_IMPORTED_MODULE_11__["LeafletLayersDirective"], _asymmetrik_ngx_leaflet__WEBPACK_IMPORTED_MODULE_11__["LeafletLayerDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ɵangular_packages_forms_forms_x"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["SelectControlValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["NgModel"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["DefaultValueAccessor"], ng5_slider__WEBPACK_IMPORTED_MODULE_14__["ɵa"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["NumberValueAccessor"]],
       pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_10__["DatePipe"]],
-      styles: ["@media screen and (min-width: 1000px) {\n  .rowStyle[_ngcontent-%COMP%] {\n    width: 25vw !important;\n  }\n\n  textarea[_ngcontent-%COMP%] {\n    width: 100%;\n    height: 10vh;\n    padding: 0.5rem;\n    outline: none;\n    border: none;\n    box-shadow: none;\n    border-radius: 12px;\n    border: 2.8px solid #14274e;\n    background-color: white;\n    font-size: 0.9rem;\n  }\n}\n@media screen and (max-width: 1000px) {\n  .rowStyle[_ngcontent-%COMP%] {\n    width: 90vw !important;\n  }\n\n  textarea[_ngcontent-%COMP%] {\n    width: 90vw;\n    height: 10vh;\n    padding: 0.5rem;\n    outline: none;\n    border: none;\n    box-shadow: none;\n    border-radius: 12px;\n    background-color: white;\n    border: 2.8px solid #14274e;\n    font-size: 0.9rem;\n  }\n}\n.box[_ngcontent-%COMP%] {\n  min-height: 3rem !important;\n  border-radius: 8px;\n  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.18) !important;\n}\n.openRowToChooseDB[_ngcontent-%COMP%] {\n  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.132);\n  position: absolute;\n  z-index: 1000 !important;\n  margin-top: 6rem !important;\n  margin-left: 7rem;\n  border-radius: 6px;\n  min-width: 8.5rem;\n}\n.rowToChoose[_ngcontent-%COMP%]:hover {\n  background-color: #f4f4f4 !important;\n}\n.selectStyle[_ngcontent-%COMP%] {\n  border-radius: 6px;\n  border: 2.8px solid #14274e;\n  color: #14274e;\n  min-height: 42px;\n  min-width: 6.5rem !important;\n  font-weight: 600;\n}\n.inputStyle[_ngcontent-%COMP%] {\n  border-radius: 6px;\n  border: 2.8px solid #14274e;\n  color: #14274e;\n  min-height: 42px;\n  width: 8rem !important;\n  font-weight: 600;\n}\n.whiteSpace[_ngcontent-%COMP%] {\n  min-width: 6.5rem !important;\n}\n.schemaStyle[_ngcontent-%COMP%] {\n  padding-top: 0.5rem;\n  font-weight: 500;\n  color: #14274e;\n  padding-bottom: 0.5rem;\n  border: 2px solid #14274e;\n  border-radius: 6px;\n}\n.webPlayerPositioning[_ngcontent-%COMP%] {\n  width: 99% !important;\n  overflow-x: hidden;\n  position: absolute;\n  z-index: 1000;\n  bottom: 1rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9uaWtvc2tvdXMvTm9EQS1EZW1vL3NyYy9tYWluL3VpL3NyYy9hcHAvcXVlcnktY29uc3RydWN0aW9uL3F1ZXJ5LWNvbnN0cnVjdGlvbi5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvcXVlcnktY29uc3RydWN0aW9uL3F1ZXJ5LWNvbnN0cnVjdGlvbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0lBQ0Usc0JBQUE7RUNDRjs7RURDQTtJQUNFLFdBQUE7SUFDQSxZQUFBO0lBQ0EsZUFBQTtJQUNBLGFBQUE7SUFDQSxZQUFBO0lBQ0EsZ0JBQUE7SUFDQSxtQkFBQTtJQUNBLDJCQUFBO0lBQ0EsdUJBQUE7SUFDQSxpQkFBQTtFQ0VGO0FBQ0Y7QURDQTtFQUNFO0lBQ0Usc0JBQUE7RUNDRjs7RURDQTtJQUNFLFdBQUE7SUFDQSxZQUFBO0lBQ0EsZUFBQTtJQUNBLGFBQUE7SUFDQSxZQUFBO0lBQ0EsZ0JBQUE7SUFDQSxtQkFBQTtJQUNBLHVCQUFBO0lBQ0EsMkJBQUE7SUFDQSxpQkFBQTtFQ0VGO0FBQ0Y7QURDQTtFQUNFLDJCQUFBO0VBQ0Esa0JBQUE7RUFDQSx1REFBQTtBQ0NGO0FERUE7RUFDRSw0Q0FBQTtFQUNBLGtCQUFBO0VBQ0Esd0JBQUE7RUFDQSwyQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxpQkFBQTtBQ0NGO0FERUE7RUFDRSxvQ0FBQTtBQ0NGO0FERUE7RUFDRSxrQkFBQTtFQUNBLDJCQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsNEJBQUE7RUFDQSxnQkFBQTtBQ0NGO0FERUE7RUFDRSxrQkFBQTtFQUNBLDJCQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0Esc0JBQUE7RUFDQSxnQkFBQTtBQ0NGO0FERUE7RUFDRSw0QkFBQTtBQ0NGO0FEYUE7RUFDRSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtBQ1ZGO0FEYUE7RUFDRSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0VBQ0EsWUFBQTtBQ1ZGIiwiZmlsZSI6InNyYy9hcHAvcXVlcnktY29uc3RydWN0aW9uL3F1ZXJ5LWNvbnN0cnVjdGlvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDEwMDBweCkge1xuICAucm93U3R5bGUge1xuICAgIHdpZHRoOiAyNXZ3ICFpbXBvcnRhbnQ7XG4gIH1cbiAgdGV4dGFyZWEge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTB2aDtcbiAgICBwYWRkaW5nOiAwLjVyZW07XG4gICAgb3V0bGluZTogbm9uZTtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgYm94LXNoYWRvdzogbm9uZTtcbiAgICBib3JkZXItcmFkaXVzOiAxMnB4O1xuICAgIGJvcmRlcjogMi44cHggc29saWQgIzE0Mjc0ZTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgICBmb250LXNpemU6IDAuOXJlbTtcbiAgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMDAwcHgpIHtcbiAgLnJvd1N0eWxlIHtcbiAgICB3aWR0aDogOTB2dyAhaW1wb3J0YW50O1xuICB9XG4gIHRleHRhcmVhIHtcbiAgICB3aWR0aDogOTB2dztcbiAgICBoZWlnaHQ6IDEwdmg7XG4gICAgcGFkZGluZzogMC41cmVtO1xuICAgIG91dGxpbmU6IG5vbmU7XG4gICAgYm9yZGVyOiBub25lO1xuICAgIGJveC1zaGFkb3c6IG5vbmU7XG4gICAgYm9yZGVyLXJhZGl1czogMTJweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgICBib3JkZXI6IDIuOHB4IHNvbGlkICMxNDI3NGU7XG4gICAgZm9udC1zaXplOiAwLjlyZW07XG4gIH1cbn1cblxuLmJveCB7XG4gIG1pbi1oZWlnaHQ6IDNyZW0gIWltcG9ydGFudDtcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xuICBib3gtc2hhZG93OiAwIDAgMTBweCAycHggcmdiYSgwLCAwLCAwLCAwLjE4KSAhaW1wb3J0YW50O1xufVxuXG4ub3BlblJvd1RvQ2hvb3NlREIge1xuICBib3gtc2hhZG93OiAwIDAgOHB4IDJweCByZ2JhKDAsIDAsIDAsIDAuMTMyKTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB6LWluZGV4OiAxMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi10b3A6IDZyZW0gIWltcG9ydGFudDtcbiAgbWFyZ2luLWxlZnQ6IDdyZW07XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgbWluLXdpZHRoOiA4LjVyZW07XG59XG5cbi5yb3dUb0Nob29zZTpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDQsIDI0NCwgMjQ0KSAhaW1wb3J0YW50O1xufVxuXG4uc2VsZWN0U3R5bGUge1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG4gIGJvcmRlcjogMi44cHggc29saWQgIzE0Mjc0ZTtcbiAgY29sb3I6ICMxNDI3NGU7XG4gIG1pbi1oZWlnaHQ6IDQycHg7XG4gIG1pbi13aWR0aDogNi41cmVtICFpbXBvcnRhbnQ7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG59XG5cbi5pbnB1dFN0eWxlIHtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xuICBib3JkZXI6IDIuOHB4IHNvbGlkICMxNDI3NGU7XG4gIGNvbG9yOiAjMTQyNzRlO1xuICBtaW4taGVpZ2h0OiA0MnB4O1xuICB3aWR0aDogOHJlbSAhaW1wb3J0YW50O1xuICBmb250LXdlaWdodDogNjAwO1xufVxuXG4ud2hpdGVTcGFjZSB7XG4gIG1pbi13aWR0aDogNi41cmVtICFpbXBvcnRhbnQ7XG59XG5cbi8vIC5vcGVuUm93VG9DaG9vc2VEQjpob3ZlciB7XG4vLyAgIGJveC1zaGFkb3c6IDAgMCA4cHggMnB4IHJnYmEoMCwgMCwgMCwgMC4xMzIpO1xuLy8gICBwb3NpdGlvbjogYWJzb2x1dGU7XG4vLyAgIGJvcmRlcjogM3B4IHNvbGlkICMxNDI3NGU7XG5cbi8vICAgei1pbmRleDogMTAwMCAhaW1wb3J0YW50O1xuLy8gICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQ0LCAyNDQsIDI0NCkgIWltcG9ydGFudDtcbi8vICAgbWFyZ2luLXRvcDogLTAuM3JlbSAhaW1wb3J0YW50O1xuLy8gICBib3JkZXItcmFkaXVzOiA2cHg7XG4vLyB9XG5cbi5zY2hlbWFTdHlsZSB7XG4gIHBhZGRpbmctdG9wOiAwLjVyZW07XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGNvbG9yOiAjMTQyNzRlO1xuICBwYWRkaW5nLWJvdHRvbTogMC41cmVtO1xuICBib3JkZXI6IDJweCBzb2xpZCAjMTQyNzRlO1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG59XG5cbi53ZWJQbGF5ZXJQb3NpdGlvbmluZyB7XG4gIHdpZHRoOiA5OSUgIWltcG9ydGFudDtcbiAgb3ZlcmZsb3cteDogaGlkZGVuO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHotaW5kZXg6IDEwMDA7XG4gIGJvdHRvbTogMXJlbTtcbn1cbiIsIkBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDEwMDBweCkge1xuICAucm93U3R5bGUge1xuICAgIHdpZHRoOiAyNXZ3ICFpbXBvcnRhbnQ7XG4gIH1cblxuICB0ZXh0YXJlYSB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMHZoO1xuICAgIHBhZGRpbmc6IDAuNXJlbTtcbiAgICBvdXRsaW5lOiBub25lO1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBib3gtc2hhZG93OiBub25lO1xuICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XG4gICAgYm9yZGVyOiAyLjhweCBzb2xpZCAjMTQyNzRlO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICAgIGZvbnQtc2l6ZTogMC45cmVtO1xuICB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMDAwcHgpIHtcbiAgLnJvd1N0eWxlIHtcbiAgICB3aWR0aDogOTB2dyAhaW1wb3J0YW50O1xuICB9XG5cbiAgdGV4dGFyZWEge1xuICAgIHdpZHRoOiA5MHZ3O1xuICAgIGhlaWdodDogMTB2aDtcbiAgICBwYWRkaW5nOiAwLjVyZW07XG4gICAgb3V0bGluZTogbm9uZTtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgYm94LXNoYWRvdzogbm9uZTtcbiAgICBib3JkZXItcmFkaXVzOiAxMnB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICAgIGJvcmRlcjogMi44cHggc29saWQgIzE0Mjc0ZTtcbiAgICBmb250LXNpemU6IDAuOXJlbTtcbiAgfVxufVxuLmJveCB7XG4gIG1pbi1oZWlnaHQ6IDNyZW0gIWltcG9ydGFudDtcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xuICBib3gtc2hhZG93OiAwIDAgMTBweCAycHggcmdiYSgwLCAwLCAwLCAwLjE4KSAhaW1wb3J0YW50O1xufVxuXG4ub3BlblJvd1RvQ2hvb3NlREIge1xuICBib3gtc2hhZG93OiAwIDAgOHB4IDJweCByZ2JhKDAsIDAsIDAsIDAuMTMyKTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB6LWluZGV4OiAxMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi10b3A6IDZyZW0gIWltcG9ydGFudDtcbiAgbWFyZ2luLWxlZnQ6IDdyZW07XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgbWluLXdpZHRoOiA4LjVyZW07XG59XG5cbi5yb3dUb0Nob29zZTpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmNGY0ZjQgIWltcG9ydGFudDtcbn1cblxuLnNlbGVjdFN0eWxlIHtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xuICBib3JkZXI6IDIuOHB4IHNvbGlkICMxNDI3NGU7XG4gIGNvbG9yOiAjMTQyNzRlO1xuICBtaW4taGVpZ2h0OiA0MnB4O1xuICBtaW4td2lkdGg6IDYuNXJlbSAhaW1wb3J0YW50O1xuICBmb250LXdlaWdodDogNjAwO1xufVxuXG4uaW5wdXRTdHlsZSB7XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgYm9yZGVyOiAyLjhweCBzb2xpZCAjMTQyNzRlO1xuICBjb2xvcjogIzE0Mjc0ZTtcbiAgbWluLWhlaWdodDogNDJweDtcbiAgd2lkdGg6IDhyZW0gIWltcG9ydGFudDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbn1cblxuLndoaXRlU3BhY2Uge1xuICBtaW4td2lkdGg6IDYuNXJlbSAhaW1wb3J0YW50O1xufVxuXG4uc2NoZW1hU3R5bGUge1xuICBwYWRkaW5nLXRvcDogMC41cmVtO1xuICBmb250LXdlaWdodDogNTAwO1xuICBjb2xvcjogIzE0Mjc0ZTtcbiAgcGFkZGluZy1ib3R0b206IDAuNXJlbTtcbiAgYm9yZGVyOiAycHggc29saWQgIzE0Mjc0ZTtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xufVxuXG4ud2ViUGxheWVyUG9zaXRpb25pbmcge1xuICB3aWR0aDogOTklICFpbXBvcnRhbnQ7XG4gIG92ZXJmbG93LXg6IGhpZGRlbjtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB6LWluZGV4OiAxMDAwO1xuICBib3R0b206IDFyZW07XG59Il19 */"]
+      styles: ["@media screen and (min-width: 1000px) {\n  .rowStyle[_ngcontent-%COMP%] {\n    width: 25vw !important;\n  }\n\n  textarea[_ngcontent-%COMP%] {\n    width: 100%;\n    height: 10vh;\n    padding: 0.5rem;\n    outline: none;\n    border: none;\n    box-shadow: none;\n    border-radius: 12px;\n    border: 2.8px solid #14274e;\n    background-color: white;\n    font-size: 0.9rem;\n  }\n}\n@media screen and (max-width: 1000px) {\n  .rowStyle[_ngcontent-%COMP%] {\n    width: 90vw !important;\n  }\n\n  textarea[_ngcontent-%COMP%] {\n    width: 100%;\n    height: 10vh;\n    padding: 0.5rem;\n    outline: none;\n    border: none;\n    box-shadow: none;\n    border-radius: 12px;\n    background-color: white;\n    border: 2.8px solid #14274e;\n    font-size: 0.9rem;\n  }\n}\n.box[_ngcontent-%COMP%] {\n  min-height: 3rem !important;\n  border-radius: 8px;\n  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.18) !important;\n}\n.openRowToChooseDB[_ngcontent-%COMP%] {\n  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.132);\n  position: absolute;\n  z-index: 1000 !important;\n  margin-top: 6rem !important;\n  margin-left: 7rem;\n  border-radius: 6px;\n  min-width: 8.5rem;\n}\n.rowToChoose[_ngcontent-%COMP%]:hover {\n  background-color: #f4f4f4 !important;\n}\n.selectStyle[_ngcontent-%COMP%] {\n  border-radius: 6px;\n  border: 2.8px solid #14274e;\n  color: #14274e;\n  min-height: 42px;\n  min-width: 6.5rem !important;\n  font-weight: 600;\n}\n.inputStyle[_ngcontent-%COMP%] {\n  border-radius: 6px;\n  border: 2.8px solid #14274e;\n  color: #14274e;\n  min-height: 42px;\n  width: 8rem !important;\n  font-weight: 600;\n}\n.whiteSpace[_ngcontent-%COMP%] {\n  min-width: 6.5rem !important;\n}\n.schemaStyle[_ngcontent-%COMP%] {\n  padding-top: 0.5rem;\n  font-weight: 500;\n  color: #14274e;\n  padding-bottom: 0.5rem;\n  border: 2px solid #14274e;\n  border-radius: 6px;\n}\n.webPlayerPositioning[_ngcontent-%COMP%] {\n  width: 99% !important;\n  overflow-x: hidden;\n  position: absolute;\n  z-index: 1000;\n  bottom: 1rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9uaWtvc2tvdXMvTm9EQS1EZW1vL3NyYy9tYWluL3VpL3NyYy9hcHAvcXVlcnktY29uc3RydWN0aW9uL3F1ZXJ5LWNvbnN0cnVjdGlvbi5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvcXVlcnktY29uc3RydWN0aW9uL3F1ZXJ5LWNvbnN0cnVjdGlvbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0lBQ0Usc0JBQUE7RUNDRjs7RURDQTtJQUNFLFdBQUE7SUFDQSxZQUFBO0lBQ0EsZUFBQTtJQUNBLGFBQUE7SUFDQSxZQUFBO0lBQ0EsZ0JBQUE7SUFDQSxtQkFBQTtJQUNBLDJCQUFBO0lBQ0EsdUJBQUE7SUFDQSxpQkFBQTtFQ0VGO0FBQ0Y7QURDQTtFQUNFO0lBQ0Usc0JBQUE7RUNDRjs7RURDQTtJQUNFLFdBQUE7SUFDQSxZQUFBO0lBQ0EsZUFBQTtJQUNBLGFBQUE7SUFDQSxZQUFBO0lBQ0EsZ0JBQUE7SUFDQSxtQkFBQTtJQUNBLHVCQUFBO0lBQ0EsMkJBQUE7SUFDQSxpQkFBQTtFQ0VGO0FBQ0Y7QURDQTtFQUNFLDJCQUFBO0VBQ0Esa0JBQUE7RUFDQSx1REFBQTtBQ0NGO0FERUE7RUFDRSw0Q0FBQTtFQUNBLGtCQUFBO0VBQ0Esd0JBQUE7RUFDQSwyQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxpQkFBQTtBQ0NGO0FERUE7RUFDRSxvQ0FBQTtBQ0NGO0FERUE7RUFDRSxrQkFBQTtFQUNBLDJCQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsNEJBQUE7RUFDQSxnQkFBQTtBQ0NGO0FERUE7RUFDRSxrQkFBQTtFQUNBLDJCQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0Esc0JBQUE7RUFDQSxnQkFBQTtBQ0NGO0FERUE7RUFDRSw0QkFBQTtBQ0NGO0FEYUE7RUFDRSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtBQ1ZGO0FEYUE7RUFDRSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0VBQ0EsWUFBQTtBQ1ZGIiwiZmlsZSI6InNyYy9hcHAvcXVlcnktY29uc3RydWN0aW9uL3F1ZXJ5LWNvbnN0cnVjdGlvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDEwMDBweCkge1xuICAucm93U3R5bGUge1xuICAgIHdpZHRoOiAyNXZ3ICFpbXBvcnRhbnQ7XG4gIH1cbiAgdGV4dGFyZWEge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTB2aDtcbiAgICBwYWRkaW5nOiAwLjVyZW07XG4gICAgb3V0bGluZTogbm9uZTtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgYm94LXNoYWRvdzogbm9uZTtcbiAgICBib3JkZXItcmFkaXVzOiAxMnB4O1xuICAgIGJvcmRlcjogMi44cHggc29saWQgIzE0Mjc0ZTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgICBmb250LXNpemU6IDAuOXJlbTtcbiAgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMDAwcHgpIHtcbiAgLnJvd1N0eWxlIHtcbiAgICB3aWR0aDogOTB2dyAhaW1wb3J0YW50O1xuICB9XG4gIHRleHRhcmVhIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwdmg7XG4gICAgcGFkZGluZzogMC41cmVtO1xuICAgIG91dGxpbmU6IG5vbmU7XG4gICAgYm9yZGVyOiBub25lO1xuICAgIGJveC1zaGFkb3c6IG5vbmU7XG4gICAgYm9yZGVyLXJhZGl1czogMTJweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgICBib3JkZXI6IDIuOHB4IHNvbGlkICMxNDI3NGU7XG4gICAgZm9udC1zaXplOiAwLjlyZW07XG4gIH1cbn1cblxuLmJveCB7XG4gIG1pbi1oZWlnaHQ6IDNyZW0gIWltcG9ydGFudDtcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xuICBib3gtc2hhZG93OiAwIDAgMTBweCAycHggcmdiYSgwLCAwLCAwLCAwLjE4KSAhaW1wb3J0YW50O1xufVxuXG4ub3BlblJvd1RvQ2hvb3NlREIge1xuICBib3gtc2hhZG93OiAwIDAgOHB4IDJweCByZ2JhKDAsIDAsIDAsIDAuMTMyKTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB6LWluZGV4OiAxMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi10b3A6IDZyZW0gIWltcG9ydGFudDtcbiAgbWFyZ2luLWxlZnQ6IDdyZW07XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgbWluLXdpZHRoOiA4LjVyZW07XG59XG5cbi5yb3dUb0Nob29zZTpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigyNDQsIDI0NCwgMjQ0KSAhaW1wb3J0YW50O1xufVxuXG4uc2VsZWN0U3R5bGUge1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG4gIGJvcmRlcjogMi44cHggc29saWQgIzE0Mjc0ZTtcbiAgY29sb3I6ICMxNDI3NGU7XG4gIG1pbi1oZWlnaHQ6IDQycHg7XG4gIG1pbi13aWR0aDogNi41cmVtICFpbXBvcnRhbnQ7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG59XG5cbi5pbnB1dFN0eWxlIHtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xuICBib3JkZXI6IDIuOHB4IHNvbGlkICMxNDI3NGU7XG4gIGNvbG9yOiAjMTQyNzRlO1xuICBtaW4taGVpZ2h0OiA0MnB4O1xuICB3aWR0aDogOHJlbSAhaW1wb3J0YW50O1xuICBmb250LXdlaWdodDogNjAwO1xufVxuXG4ud2hpdGVTcGFjZSB7XG4gIG1pbi13aWR0aDogNi41cmVtICFpbXBvcnRhbnQ7XG59XG5cbi8vIC5vcGVuUm93VG9DaG9vc2VEQjpob3ZlciB7XG4vLyAgIGJveC1zaGFkb3c6IDAgMCA4cHggMnB4IHJnYmEoMCwgMCwgMCwgMC4xMzIpO1xuLy8gICBwb3NpdGlvbjogYWJzb2x1dGU7XG4vLyAgIGJvcmRlcjogM3B4IHNvbGlkICMxNDI3NGU7XG5cbi8vICAgei1pbmRleDogMTAwMCAhaW1wb3J0YW50O1xuLy8gICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQ0LCAyNDQsIDI0NCkgIWltcG9ydGFudDtcbi8vICAgbWFyZ2luLXRvcDogLTAuM3JlbSAhaW1wb3J0YW50O1xuLy8gICBib3JkZXItcmFkaXVzOiA2cHg7XG4vLyB9XG5cbi5zY2hlbWFTdHlsZSB7XG4gIHBhZGRpbmctdG9wOiAwLjVyZW07XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGNvbG9yOiAjMTQyNzRlO1xuICBwYWRkaW5nLWJvdHRvbTogMC41cmVtO1xuICBib3JkZXI6IDJweCBzb2xpZCAjMTQyNzRlO1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG59XG5cbi53ZWJQbGF5ZXJQb3NpdGlvbmluZyB7XG4gIHdpZHRoOiA5OSUgIWltcG9ydGFudDtcbiAgb3ZlcmZsb3cteDogaGlkZGVuO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHotaW5kZXg6IDEwMDA7XG4gIGJvdHRvbTogMXJlbTtcbn1cbiIsIkBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDEwMDBweCkge1xuICAucm93U3R5bGUge1xuICAgIHdpZHRoOiAyNXZ3ICFpbXBvcnRhbnQ7XG4gIH1cblxuICB0ZXh0YXJlYSB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMHZoO1xuICAgIHBhZGRpbmc6IDAuNXJlbTtcbiAgICBvdXRsaW5lOiBub25lO1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBib3gtc2hhZG93OiBub25lO1xuICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XG4gICAgYm9yZGVyOiAyLjhweCBzb2xpZCAjMTQyNzRlO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICAgIGZvbnQtc2l6ZTogMC45cmVtO1xuICB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMDAwcHgpIHtcbiAgLnJvd1N0eWxlIHtcbiAgICB3aWR0aDogOTB2dyAhaW1wb3J0YW50O1xuICB9XG5cbiAgdGV4dGFyZWEge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTB2aDtcbiAgICBwYWRkaW5nOiAwLjVyZW07XG4gICAgb3V0bGluZTogbm9uZTtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgYm94LXNoYWRvdzogbm9uZTtcbiAgICBib3JkZXItcmFkaXVzOiAxMnB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICAgIGJvcmRlcjogMi44cHggc29saWQgIzE0Mjc0ZTtcbiAgICBmb250LXNpemU6IDAuOXJlbTtcbiAgfVxufVxuLmJveCB7XG4gIG1pbi1oZWlnaHQ6IDNyZW0gIWltcG9ydGFudDtcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xuICBib3gtc2hhZG93OiAwIDAgMTBweCAycHggcmdiYSgwLCAwLCAwLCAwLjE4KSAhaW1wb3J0YW50O1xufVxuXG4ub3BlblJvd1RvQ2hvb3NlREIge1xuICBib3gtc2hhZG93OiAwIDAgOHB4IDJweCByZ2JhKDAsIDAsIDAsIDAuMTMyKTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB6LWluZGV4OiAxMDAwICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi10b3A6IDZyZW0gIWltcG9ydGFudDtcbiAgbWFyZ2luLWxlZnQ6IDdyZW07XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgbWluLXdpZHRoOiA4LjVyZW07XG59XG5cbi5yb3dUb0Nob29zZTpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmNGY0ZjQgIWltcG9ydGFudDtcbn1cblxuLnNlbGVjdFN0eWxlIHtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xuICBib3JkZXI6IDIuOHB4IHNvbGlkICMxNDI3NGU7XG4gIGNvbG9yOiAjMTQyNzRlO1xuICBtaW4taGVpZ2h0OiA0MnB4O1xuICBtaW4td2lkdGg6IDYuNXJlbSAhaW1wb3J0YW50O1xuICBmb250LXdlaWdodDogNjAwO1xufVxuXG4uaW5wdXRTdHlsZSB7XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgYm9yZGVyOiAyLjhweCBzb2xpZCAjMTQyNzRlO1xuICBjb2xvcjogIzE0Mjc0ZTtcbiAgbWluLWhlaWdodDogNDJweDtcbiAgd2lkdGg6IDhyZW0gIWltcG9ydGFudDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbn1cblxuLndoaXRlU3BhY2Uge1xuICBtaW4td2lkdGg6IDYuNXJlbSAhaW1wb3J0YW50O1xufVxuXG4uc2NoZW1hU3R5bGUge1xuICBwYWRkaW5nLXRvcDogMC41cmVtO1xuICBmb250LXdlaWdodDogNTAwO1xuICBjb2xvcjogIzE0Mjc0ZTtcbiAgcGFkZGluZy1ib3R0b206IDAuNXJlbTtcbiAgYm9yZGVyOiAycHggc29saWQgIzE0Mjc0ZTtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xufVxuXG4ud2ViUGxheWVyUG9zaXRpb25pbmcge1xuICB3aWR0aDogOTklICFpbXBvcnRhbnQ7XG4gIG92ZXJmbG93LXg6IGhpZGRlbjtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB6LWluZGV4OiAxMDAwO1xuICBib3R0b206IDFyZW07XG59Il19 */"]
     });
     /*@__PURE__*/
 

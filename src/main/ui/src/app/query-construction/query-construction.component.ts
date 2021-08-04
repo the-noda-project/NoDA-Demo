@@ -18,7 +18,7 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class QueryConstructionComponent implements OnInit {
   query: string;
-  NoSQLExpression: string =  'Not available yet.';
+  NoSQLExpression: string = 'Not available yet.';
 
   // queryToRunMongo: string =
   //   'SELECT* FROM car WHERE GEO_RECTANGLE(location, [(13.263160139322283, 52.49997397893388),(13.306762129068376, 52.52113031608697)] )';
@@ -47,9 +47,9 @@ export class QueryConstructionComponent implements OnInit {
   // redisActualQuery: string =
   //   'FilterList AND (2/2): [FilterList AND (2/2): [PrefixFilter u336w, CircleFilter (location, longitude, latitude, (13.272429853677751 52.509430292042886),1)], FilterList OR (0/0): []]';
 
-  selectValue: string = "default";
-  fromValue: string = "default";
-  whereValue: string = "default";
+  selectValue: string = 'default';
+  fromValue: string = 'default';
+  whereValue: string = 'default';
 
   objectIdFieldName: string;
   objectLocationFieldName: string;
@@ -133,15 +133,14 @@ export class QueryConstructionComponent implements OnInit {
 
   dropDownProps = {
     mongo: ['vehicle', 'car_type', 'hilIndex', 'location', 'date'],
-    neo4j: [
-      'vehicle',
-      'location',
-      'hilIndex',
-      'stHilIndex',
-      'date'
-    ],
+    neo4j: ['vehicle', 'location', 'hilIndex', 'stHilIndex', 'date'],
     hbase: ['location:vehicle', 'location:date', 'location'],
-    hbaseID: ['location:vehicle', 'location:date', 'location:latitude', 'location:longitude'],
+    hbaseID: [
+      'location:vehicle',
+      'location:date',
+      'location:latitude',
+      'location:longitude',
+    ],
     redis: ['vehicle', 'date', 'location'],
     redisID: ['vehicle', 'date', 'longitude', 'latitude'],
   };
@@ -216,6 +215,10 @@ export class QueryConstructionComponent implements OnInit {
     });
   }
 
+  leafletDrawDeleted(e: any) {
+    this.layers.splice(1, this.layers.length-1)
+  }
+
   drawLogic(e: any) {
     const type = (e as any).layerType,
       layer = (e as any).layer;
@@ -228,7 +231,7 @@ export class QueryConstructionComponent implements OnInit {
       var theRadius = layer.getRadius();
 
       console.log('radius: ', theRadius, 'Center: ', theCenterPt.lat);
-      this.radius = theRadius/1000;
+      this.radius = theRadius / 1000;
       this.lat = theCenterPt.lat;
       this.lon = theCenterPt.lng;
     }
@@ -288,7 +291,11 @@ export class QueryConstructionComponent implements OnInit {
           }
 
           this.queryConstructionServ
-            .spatialSqlQueryPost(this.query, this.objectIdFieldName, this.objectLocationFieldName)
+            .spatialSqlQueryPost(
+              this.query,
+              this.objectIdFieldName,
+              this.objectLocationFieldName
+            )
             .then((res) => {
               this.query = this.query;
 
@@ -297,7 +304,7 @@ export class QueryConstructionComponent implements OnInit {
               if (data['status'] === 'ok') {
                 this.isLoading = false;
                 this.NoSQLExpression = data['exp'];
-                
+
                 this.quoteService.updateData(res);
                 // Take data from serve from quoteService
                 this.dataFromServer = this.quoteService.getData();
@@ -390,11 +397,11 @@ export class QueryConstructionComponent implements OnInit {
                 this.radius +
                 ' , ' +
                 this.objectTimeFieldName +
-                ' , \'' +
+                " , '" +
                 this.minTimestamp +
-                '\' , \'' +
+                "' , '" +
                 this.maxTimestamp +
-                '\' )';
+                "' )";
               console.log(this.query);
             } else {
               this.query =
@@ -414,11 +421,11 @@ export class QueryConstructionComponent implements OnInit {
                 this.lat1 +
                 ' )], ' +
                 this.objectTimeFieldName +
-                ' , \'' +
+                " , '" +
                 this.minTimestamp +
-                '\' , \'' +
+                "' , '" +
                 this.maxTimestamp +
-                '\' )';
+                "' )";
               console.log(this.query);
             }
 
@@ -426,7 +433,7 @@ export class QueryConstructionComponent implements OnInit {
             this.queryConstructionServ
               .spatioTemporalSqlQueryPost(
                 this.query,
-                this.objectIdFieldName, 
+                this.objectIdFieldName,
                 this.objectLocationFieldName,
                 this.objectTimeFieldName
               )

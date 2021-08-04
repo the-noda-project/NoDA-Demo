@@ -1,7 +1,7 @@
 <div class="container-fluid p-0" style="min-height: 100vh; max-height: 100vh; min-width: 100vw;">
   <div class="row w-100 m-0">
     <!-- sidebar -->
-    <div class="col-2 p-0" style="
+    <div class="col-4 col-md-2 col-lg-2 p-0" style="
         min-height: 100vh;
         max-height: 100vh;
         border-right: 3px solid #14274e;
@@ -240,10 +240,10 @@
     </div>
 
     <!-- main -->
-    <div class="col-10 p-0" style="min-height: 100vh; max-height: 100vh;">
+    <div class="col-8 col-md-10 col-lg-10 p-0" style="min-height: 100vh; max-height: 100vh;">
       <div class="row w-100 m-0">
         <!-- Main content and query builders -->
-        <div class="col-6 pt-4 pb-5" style="
+        <div class="col-12 col-md-6 col-lg-5 pt-4 pb-5" style="
             min-height: 100vh;
             max-height: 100vh;
             overflow-y: auto !important;
@@ -606,7 +606,7 @@
         </div>
 
         <!-- Leaflet - Map & web player -->
-        <div class="col-6 pr-0" style="min-height: 100vh; max-height: 100vh;">
+        <div class="col-12 col-md-6 col-lg-7 pr-0" style="min-height: 100vh; max-height: 100vh;">
           <!-- web player -->
           <div class="row w-100 m-0 p-0 webPlayerPositioning" *ngIf="
               chosenGeoSQLFunction === 'GEO_TEMPORAL_CIRCLE_KM' ||
@@ -614,7 +614,7 @@
             ">
             <div class="col-12" style="box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.283) !important;">
               <div class="row w-100 m-0 p-2" style="background-color: rgb(85, 85, 85); border-radius: 12px;">
-                <div class="col-auto align-self-center" style="z-index: 1000;">
+                <div class="col-12 col-md-12 col-lg-auto align-self-center" style="z-index: 1000;">
                   <div class="btn btn-light font12 mr-2 p-0 pl-2 pr-2" style="padding-top: 2px; padding-bottom: 2px;"
                     (click)="playSpatioTemporal()">
                     <i class="fa fa-play"></i>
@@ -623,17 +623,21 @@
                     <i class="fa fa-pause"></i>
                   </div>
                 </div>
-                <div class="col-12 p-0 text-center text-white font14" style="position: absolute; top: 10px;">
-                  <span class="font-weight-bold mr-3">Period Displayed :</span>
+
+                <div class="col-12 col-md-12 pt-2 pt-lg-0 col-lg p-0 text-center align-self-center text-white font14">
+                  <span class="font-weight-bold mr-3">Period:</span>
                   <div class="btn btn-light font12 mr-2 p-0 pl-2 pr-2" style="padding-top: 2px; padding-bottom: 2px;">
                     <i class="fa fa-backward"></i>
                   </div>
-                  {{ value | date: 'dd/MM/yyyy HH:mm:ss' }} -
-                  {{ maxValue | date: 'dd/MM/yyyy HH:mm:ss' }}
+                  <span style="font-size: 0.8rem;">
+                    {{ value | date: 'dd/MM/yyyy HH:mm:ss' }} -
+                    {{ maxValue | date: 'dd/MM/yyyy HH:mm:ss' }}
+                  </span>
                   <div class="btn btn-light font12 ml-2 p-0 pl-2 pr-2" style="padding-top: 2px; padding-bottom: 2px;">
                     <i class="fa fa-forward"></i>
                   </div>
                 </div>
+
                 <ng5-slider [(value)]="value" [(highValue)]="maxValue" [(options)]="opt">
                 </ng5-slider>
                 <div class="col-6 pl-0 text-white font12">
@@ -678,7 +682,7 @@
               box-shadow: -4px 0 10px 3px rgba(0, 0, 0, 0.221);
             " leaflet leafletDraw [leafletOptions]="options" [leafletLayers]="layers"
             (leafletMapReady)="onMapReady($event)" [leafletDrawOptions]="drawOptions"
-            (leafletDrawCreated)="onDrawCreated($event)">
+            (leafletDrawCreated)="onDrawCreated($event)" (leafletDrawDeleted)="leafletDrawDeleted($event)">
             <div [leafletLayer]="drawItems"></div>
           </div>
         </div>

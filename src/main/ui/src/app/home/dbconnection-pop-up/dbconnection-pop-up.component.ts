@@ -98,6 +98,8 @@ export class DbconnectionPopUpComponent implements OnInit {
           this.spinerIsActive = false;
           this.modal.dismissAll();
           console.log(res);
+          this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+          this.router.onSameUrlNavigation = 'reload';
           this.router.navigate(['/visualization/dbtype/' + this.db]);
         })
         .catch((err) => {
