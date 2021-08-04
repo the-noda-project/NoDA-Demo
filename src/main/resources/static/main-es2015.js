@@ -1727,7 +1727,7 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "\n    ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "\n      v_1.0.8\n    ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "\n      v_1.0.9\n    ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "\n  ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2649,7 +2649,7 @@ function QueryConstructionComponent_div_46_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, "\n        ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function QueryConstructionComponent_div_49_div_17_Template(rf, ctx) { if (rf & 1) {
+function QueryConstructionComponent_div_49_div_22_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 58);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2665,29 +2665,36 @@ function QueryConstructionComponent_div_49_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "\n            Nodes - Labels\n          ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "\n          ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "\n          ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 59);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "\n            Relationship Types\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 57);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "\n            ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 58);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "\n              passengerCars\n            ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "\n          ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 57);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "\n            There are no relationships yet\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "\n          ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "\n          ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 59);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "\n            Property Keys\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 59);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "\n            Relationship Types\n          ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "\n          ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 57);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "\n            ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, QueryConstructionComponent_div_49_div_17_Template, 2, 1, "div", 60);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 57);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "\n            There are no relationships yet\n          ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "\n        ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 59);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "\n            Property Keys\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 57);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "\n            ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](22, QueryConstructionComponent_div_49_div_22_Template, 2, 1, "div", 60);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "\n        ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r10.dropDownProps.neo4j);
 } }
 function QueryConstructionComponent_div_52_Template(rf, ctx) { if (rf & 1) {
@@ -2760,11 +2767,11 @@ function QueryConstructionComponent_div_55_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "\n            ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 58);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "\n              location:longitude\n            ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "\n              longitude\n            ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "\n            ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 58);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "\n              location:latitude\n            ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "\n              latitude\n            ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "\n            ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 58);
@@ -3958,16 +3965,16 @@ class QueryConstructionComponent {
         this.dropDownProps = {
             mongo: ['vehicle', 'car_type', 'hilIndex', 'location', 'date'],
             neo4j: [
-                'car_Id',
+                'vehicle',
                 'location',
-                'Timestamp',
-                'HilbertIndex',
-                'STHilbertIndex',
+                'hilIndex',
+                'stHilIndex',
+                'date'
             ],
             hbase: ['location:vehicle', 'location:date', 'location'],
             hbaseID: ['location:vehicle', 'location:date', 'location:latitude', 'location:longitude'],
             redis: ['vehicle', 'date', 'location'],
-            redisID: ['vehicle', 'date', 'location:longitude', 'location:latitude'],
+            redisID: ['vehicle', 'date', 'longitude', 'latitude'],
         };
         this.layers = [];
         this.options = {
@@ -4470,7 +4477,7 @@ QueryConstructionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](46, QueryConstructionComponent_div_46_Template, 44, 0, "div", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "\n\n        ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "\n        ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](49, QueryConstructionComponent_div_49_Template, 20, 1, "div", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](49, QueryConstructionComponent_div_49_Template, 25, 1, "div", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](50, "\n\n        ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "\n        ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](52, QueryConstructionComponent_div_52_Template, 31, 0, "div", 17);
