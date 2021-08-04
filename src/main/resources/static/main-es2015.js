@@ -4039,7 +4039,7 @@ class QueryConstructionComponent {
         });
     }
     leafletDrawDeleted(e) {
-        this.layers.splice(1, this.layers.length - 1);
+        this.layers = [];
     }
     drawLogic(e) {
         const type = e.layerType, layer = e.layer;
@@ -4063,6 +4063,7 @@ class QueryConstructionComponent {
         }
     }
     runSpatialQuery() {
+        this.layers = [];
         if (this.objectIdFieldName) {
             if (this.objectLocationFieldName) {
                 if (this.lat && this.lon) {
@@ -4168,6 +4169,7 @@ class QueryConstructionComponent {
         }
     }
     runSpatioTemporalQuery() {
+        this.layers = [];
         if (this.objectIdFieldName) {
             if (this.objectLocationFieldName) {
                 if (this.objectTimeFieldName &&
@@ -4381,6 +4383,7 @@ class QueryConstructionComponent {
     }
     playSpatioTemporal() {
         // this.value = this.opt.floor;
+        this.layers = [];
         this.maxValue =
             this.opt.floor + this.windowBetweenFloorAndCeil * 60 * 60 * 1000;
         let i = 0;

@@ -7849,7 +7849,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "leafletDrawDeleted",
         value: function leafletDrawDeleted(e) {
-          this.layers.splice(1, this.layers.length - 1);
+          this.layers = [];
         }
       }, {
         key: "drawLogic",
@@ -7881,6 +7881,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "runSpatialQuery",
         value: function runSpatialQuery() {
           var _this8 = this;
+
+          this.layers = [];
 
           if (this.objectIdFieldName) {
             if (this.objectLocationFieldName) {
@@ -7960,6 +7962,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "runSpatioTemporalQuery",
         value: function runSpatioTemporalQuery() {
           var _this9 = this;
+
+          this.layers = [];
 
           if (this.objectIdFieldName) {
             if (this.objectLocationFieldName) {
@@ -8146,6 +8150,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this11 = this;
 
           // this.value = this.opt.floor;
+          this.layers = [];
           this.maxValue = this.opt.floor + this.windowBetweenFloorAndCeil * 60 * 60 * 1000;
           var i = 0; // for (let key in this.groupedData) {
 

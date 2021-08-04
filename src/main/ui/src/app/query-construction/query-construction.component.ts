@@ -216,7 +216,7 @@ export class QueryConstructionComponent implements OnInit {
   }
 
   leafletDrawDeleted(e: any) {
-    this.layers.splice(1, this.layers.length-1)
+    this.layers = []
   }
 
   drawLogic(e: any) {
@@ -247,6 +247,7 @@ export class QueryConstructionComponent implements OnInit {
   }
 
   runSpatialQuery() {
+    this.layers = []
     if (this.objectIdFieldName) {
       if (this.objectLocationFieldName) {
         if (this.lat && this.lon) {
@@ -372,6 +373,7 @@ export class QueryConstructionComponent implements OnInit {
   }
 
   runSpatioTemporalQuery() {
+    this.layers = []
     if (this.objectIdFieldName) {
       if (this.objectLocationFieldName) {
         if (
@@ -643,6 +645,8 @@ export class QueryConstructionComponent implements OnInit {
 
   playSpatioTemporal() {
     // this.value = this.opt.floor;
+    this.layers = []
+
     this.maxValue =
       this.opt.floor + this.windowBetweenFloorAndCeil * 60 * 60 * 1000;
     let i = 0;
