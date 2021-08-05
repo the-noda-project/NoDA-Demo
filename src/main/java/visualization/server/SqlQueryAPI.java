@@ -50,7 +50,7 @@ public class SqlQueryAPI {
             sb.append("]");
             sb.deleteCharAt(sb.lastIndexOf(","));
             if(NoSQLExpression.INSTANCE.getExpression()!=null) {
-                sb.append(", \"exp\": \"" +  expression.replace("\n","#NEWLINE#").replaceAll("\\s", "").replaceAll("\"","'").replace("\\", "\\\\").replace("#NEWLINE#","\\n") + "\"}");
+                sb.append(", \"exp\": \"" +  expression.replace("\n","#NEWLINE#").replaceAll("\"","'").replace("\\", "\\\\").replace("#NEWLINE#","\\n") + "\"}");
             } else {
                 sb.append("}");
             }
@@ -96,7 +96,7 @@ public class SqlQueryAPI {
             sb.deleteCharAt(sb.lastIndexOf(","));
 
             if(NoSQLExpression.INSTANCE.getExpression()!=null) {
-                sb.append(", \"exp\": \"" +  expression.replace("\n","#NEWLINE#").replaceAll("\\s", "").replaceAll("\"","'").replace("\\", "\\\\").replace("#NEWLINE#","\\n") + "\"}");
+                sb.append(", \"exp\": \"" +  expression.replace("\n","#NEWLINE#").replaceAll("\"","'").replace("\\", "\\\\").replace("#NEWLINE#","\\n") + "\"}");
             } else {
                 sb.append("}");
             }
@@ -151,7 +151,7 @@ public class SqlQueryAPI {
         sb.deleteCharAt(sb.lastIndexOf(","));
 
         if(NoSQLExpression.INSTANCE.getExpression()!=null) {
-            sb.append(", \"exp\": \"" + expression.replace("\n","#NEWLINE#").replaceAll("\\s", "").replaceAll("\"","'").replace("\\", "\\\\").replace("#NEWLINE#","\\n") + "\"}");
+            sb.append(", \"exp\": \"" + expression.replace("\n","#NEWLINE#").replaceAll("\"","'").replace("\\", "\\\\").replace("#NEWLINE#","\\n") + "\"}");
         } else {
             sb.append("}");
         }
