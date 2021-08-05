@@ -310,6 +310,7 @@
                     <option *ngIf="activeDatabase === 'default'" value="default" disabled>-</option>
                     <option *ngIf="activeDatabase === 'neo4j'" value="passengerCars">passengerCars</option>
                     <option *ngIf="activeDatabase === 'mongodb'" value="passengerCars">passengerCars</option>
+                    <option *ngIf="activeDatabase === 'mongodb'" value="car">car</option>
                     <option *ngIf="activeDatabase === 'hbase'" value="passengerCars">passengerCars</option>
                     <option *ngIf="activeDatabase === 'redis'" value="passengerCars">passengerCars</option>
                   </select>
@@ -596,7 +597,7 @@
                 </div>
               </div>
               <div class="row w-100 m-0 pb-3" *ngIf="isActualDBTabOpen">
-                <div class="col-12" style="color: #14274e; word-wrap: break-word;">
+                <div class="col-12" style="color: #14274e; word-wrap: break-word; white-space: pre-line;">
                   <!-- No query available yet. -->
                   {{ NoSQLExpression }}               
                 </div>

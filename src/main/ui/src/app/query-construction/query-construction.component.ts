@@ -64,6 +64,7 @@ export class QueryConstructionComponent implements OnInit {
   lon1?: number;
 
   isLoading: boolean = false;
+  timeout: any;
 
   constructor(
     private modal: NgbModal,
@@ -216,7 +217,7 @@ export class QueryConstructionComponent implements OnInit {
   }
 
   leafletDrawDeleted(e: any) {
-    this.layers = []
+    this.layers = [];
   }
 
   drawLogic(e: any) {
@@ -247,7 +248,7 @@ export class QueryConstructionComponent implements OnInit {
   }
 
   runSpatialQuery() {
-    this.layers = []
+    this.layers = [];
     if (this.objectIdFieldName) {
       if (this.objectLocationFieldName) {
         if (this.lat && this.lon) {
@@ -373,7 +374,7 @@ export class QueryConstructionComponent implements OnInit {
   }
 
   runSpatioTemporalQuery() {
-    this.layers = []
+    this.layers = [];
     if (this.objectIdFieldName) {
       if (this.objectLocationFieldName) {
         if (
@@ -645,7 +646,7 @@ export class QueryConstructionComponent implements OnInit {
 
   playSpatioTemporal() {
     // this.value = this.opt.floor;
-    this.layers = []
+    this.layers = [];
 
     this.maxValue =
       this.opt.floor + this.windowBetweenFloorAndCeil * 60 * 60 * 1000;
@@ -656,7 +657,8 @@ export class QueryConstructionComponent implements OnInit {
       console.log('eimai akrivos apekso!');
 
       i++;
-      setTimeout(() => {
+
+      this.timeout = setTimeout(() => {
         if (parseInt(this.timestampManipulation(key)) > this.opt.floor) {
           this.groupedData[key].forEach((element: any) => {
             const lat = element.lat;
@@ -698,6 +700,13 @@ export class QueryConstructionComponent implements OnInit {
         }
         // console.log("auta einai ta layers", this.layers);
       }, i * (this.fps * 1000));
+    }
+  }
+
+  stopTimeout() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+      this.timeout = null;
     }
   }
 }
