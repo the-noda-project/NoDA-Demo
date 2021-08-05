@@ -64,7 +64,6 @@ export class QueryConstructionComponent implements OnInit {
   lon1?: number;
 
   isLoading: boolean = false;
-  timeout: any;
 
   constructor(
     private modal: NgbModal,
@@ -257,7 +256,7 @@ export class QueryConstructionComponent implements OnInit {
           if (this.chosenGeoSQLFunction === 'GEO_CIRCLE_KM') {
             //'SELECT* FROM car WHERE GEO_CIRCLE_KM(location, (13.272429853677751, 52.509430292042886), 1)';
             this.query =
-              'SELECT* FROM ' +
+              'SELECT * FROM ' +
               this.fromValue +
               ' WHERE ' +
               this.chosenGeoSQLFunction +
@@ -274,7 +273,7 @@ export class QueryConstructionComponent implements OnInit {
           } else {
             //'SELECT* FROM car WHERE GEO_RECTANGLE(location, [(13.263160139322283, 52.49997397893388),(13.306762129068376, 52.52113031608697)] )';
             this.query =
-              'SELECT* FROM ' +
+              'SELECT * FROM ' +
               this.fromValue +
               ' WHERE ' +
               this.chosenGeoSQLFunction +
@@ -384,9 +383,9 @@ export class QueryConstructionComponent implements OnInit {
         ) {
           if (this.lat && this.lon) {
             if (this.chosenGeoSQLFunction === 'GEO_TEMPORAL_CIRCLE_KM') {
-              // "SELECT* FROM car WHERE GEO_TEMPORAL_CIRCLE_KM(location, (13.285476118326189, 52.51026611136366), 1.5, date, '29/05/2007 12:00:00', '1/06/2007 12:00:00')";
+              // "SELECT * FROM car WHERE GEO_TEMPORAL_CIRCLE_KM(location, (13.285476118326189, 52.51026611136366), 1.5, date, '29/05/2007 12:00:00', '1/06/2007 12:00:00')";
               this.query =
-                'SELECT* FROM ' +
+                'SELECT * FROM ' +
                 this.fromValue +
                 ' WHERE ' +
                 this.chosenGeoSQLFunction +
@@ -408,7 +407,7 @@ export class QueryConstructionComponent implements OnInit {
               console.log(this.query);
             } else {
               this.query =
-                'SELECT* FROM ' +
+                'SELECT * FROM ' +
                 this.fromValue +
                 ' WHERE ' +
                 this.chosenGeoSQLFunction +
@@ -658,7 +657,7 @@ export class QueryConstructionComponent implements OnInit {
 
       i++;
 
-      this.timeout = setTimeout(() => {
+      setTimeout(() => {
         if (parseInt(this.timestampManipulation(key)) > this.opt.floor) {
           this.groupedData[key].forEach((element: any) => {
             const lat = element.lat;
@@ -700,13 +699,6 @@ export class QueryConstructionComponent implements OnInit {
         }
         // console.log("auta einai ta layers", this.layers);
       }, i * (this.fps * 1000));
-    }
-  }
-
-  stopTimeout() {
-    if (this.timeout) {
-      clearTimeout(this.timeout);
-      this.timeout = null;
     }
   }
 }

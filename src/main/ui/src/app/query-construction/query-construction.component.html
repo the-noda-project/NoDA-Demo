@@ -238,7 +238,6 @@
         </div>
       </div>
     </div>
-
     <!-- main -->
     <div class="col-8 col-md-10 col-lg-10 p-0" style="min-height: 100vh; max-height: 100vh;">
       <div class="row w-100 m-0">
@@ -310,7 +309,7 @@
                     <option *ngIf="activeDatabase === 'default'" value="default" disabled>-</option>
                     <option *ngIf="activeDatabase === 'neo4j'" value="passengerCars">passengerCars</option>
                     <option *ngIf="activeDatabase === 'mongodb'" value="passengerCars">passengerCars</option>
-                    <option *ngIf="activeDatabase === 'mongodb'" value="car">car</option>
+                    <!-- <option *ngIf="activeDatabase === 'mongodb'" value="car">car</option> -->
                     <option *ngIf="activeDatabase === 'hbase'" value="passengerCars">passengerCars</option>
                     <option *ngIf="activeDatabase === 'redis'" value="passengerCars">passengerCars</option>
                   </select>
@@ -599,7 +598,7 @@
               <div class="row w-100 m-0 pb-3" *ngIf="isActualDBTabOpen">
                 <div class="col-12" style="color: #14274e; word-wrap: break-word; white-space: pre-line;">
                   <!-- No query available yet. -->
-                  {{ NoSQLExpression }}               
+                  {{ NoSQLExpression }}    
                 </div>
               </div>
             </div>
@@ -620,7 +619,7 @@
                     (click)="playSpatioTemporal()">
                     <i class="fa fa-play"></i>
                   </div>
-                  <!-- <div class="btn btn-light font12 mr-2 p-0 pl-2 pr-2" style="padding-top: 2px; padding-bottom: 2px;">
+                  <!-- <div class="btn btn-light font12 mr-2 p-0 pl-2 pr-2" (click)="stopTimeout()" style="padding-top: 2px; padding-bottom: 2px;">
                     <i class="fa fa-pause"></i>
                   </div> -->
                 </div>
