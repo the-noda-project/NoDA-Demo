@@ -596,9 +596,9 @@
                 </div>
               </div>
               <div class="row w-100 m-0 pb-3" *ngIf="isActualDBTabOpen">
-                <div class="col-12" style="color: #14274e;">
+                <div class="col-12" style="color: #14274e; word-wrap: break-word;">
                   <!-- No query available yet. -->
-                  {{ NoSQLExpression }}
+                  {{ NoSQLExpression }}               
                 </div>
               </div>
             </div>
@@ -619,9 +619,9 @@
                     (click)="playSpatioTemporal()">
                     <i class="fa fa-play"></i>
                   </div>
-                  <div class="btn btn-light font12 mr-2 p-0 pl-2 pr-2" style="padding-top: 2px; padding-bottom: 2px;">
+                  <!-- <div class="btn btn-light font12 mr-2 p-0 pl-2 pr-2" style="padding-top: 2px; padding-bottom: 2px;">
                     <i class="fa fa-pause"></i>
-                  </div>
+                  </div> -->
                 </div>
 
                 <div class="col-12 col-md-12 pt-2 pt-lg-0 col-lg p-0 text-center align-self-center text-white font14">
@@ -674,7 +674,6 @@
               </div>
             </div>
           </div>
-
           <!-- LEAFLET MAP -->
           <div style="
               min-height: 100vh;
