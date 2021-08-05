@@ -1483,7 +1483,7 @@ class DbconnectionPopUpComponent {
     }
 }
 DbconnectionPopUpComponent.ɵfac = function DbconnectionPopUpComponent_Factory(t) { return new (t || DbconnectionPopUpComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_notifications__WEBPACK_IMPORTED_MODULE_3__["NotificationsService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_quote_service__WEBPACK_IMPORTED_MODULE_4__["QuoteService"])); };
-DbconnectionPopUpComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DbconnectionPopUpComponent, selectors: [["app-dbconnection-pop-up"]], inputs: { db: "db" }, decls: 43, vars: 8, consts: [[1, "modal-content", "modalfade", "pt-2", "pb-2"], [1, "modal-header"], [1, "col-auto", "p-0", "align-self-center"], [1, "img-fluid", 2, "width", "8rem", 3, "src"], [1, "col-auto", "align-self-center", 2, "font-size", "1.1rem", "font-weight", "bold"], [1, "molad-body", "p-3"], [1, "row", "w-100", "m-0"], ["class", "col-12 mb-2", 4, "ngIf"], ["class", "col-6", 4, "ngIf"], ["class", "col-6 mt-2", 4, "ngIf"], [1, "modal-footer", "mt-2"], [1, "btn", "font-weight-bold", 2, "color", "#b12f26", "font-size", "1rem", "border", "2px solid #b12f26", 3, "click"], [1, "btn", "font-weight-bold", 2, "color", "#14274e", "font-size", "1rem", "border", "2px solid #14274e", 3, "click"], ["style", "font-size: 0.9rem;", "class", "fa fa-spinner fa-pulse fa-3x fa-fw", 4, "ngIf"], [1, "col-12", "mb-2"], ["placeholder", "Database", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["placeholder", "Collection", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "col-6"], ["placeholder", "Url", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["placeholder", "Port", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "col-6", "mt-2"], ["placeholder", "Username", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["placeholder", "Password", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "fa", "fa-spinner", "fa-pulse", "fa-3x", "fa-fw", 2, "font-size", "0.9rem"]], template: function DbconnectionPopUpComponent_Template(rf, ctx) { if (rf & 1) {
+DbconnectionPopUpComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DbconnectionPopUpComponent, selectors: [["app-dbconnection-pop-up"]], inputs: { db: "db" }, decls: 43, vars: 8, consts: [[1, "modal-content", "modalfade", "pt-2", "pb-2"], [1, "modal-header"], [1, "col-auto", "p-0", "align-self-center"], [1, "img-fluid", 2, "width", "8rem", 3, "src"], [1, "col-auto", "align-self-center", 2, "font-size", "1.1rem", "font-weight", "bold"], [1, "molad-body", "p-3"], [1, "row", "w-100", "m-0"], ["class", "col-12 mb-2", 4, "ngIf"], ["class", "col-6", 4, "ngIf"], ["class", "col-6 mt-2", 4, "ngIf"], [1, "modal-footer", "mt-2"], [1, "btn", "font-weight-bold", 2, "color", "#b12f26", "font-size", "1rem", "border", "2px solid #b12f26", 3, "click"], [1, "btn", "font-weight-bold", 2, "color", "#14274e", "font-size", "1rem", "border", "2px solid #14274e", 3, "click"], ["style", "font-size: 0.9rem;", "class", "fa fa-spinner fa-pulse fa-3x fa-fw", 4, "ngIf"], [1, "col-12", "mb-2"], ["placeholder", "Database", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["placeholder", "Collection", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "col-6"], ["placeholder", "Url", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["placeholder", "Port", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "col-6", "mt-2"], ["placeholder", "Username", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["type", "password", "placeholder", "Password", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "fa", "fa-spinner", "fa-pulse", "fa-3x", "fa-fw", 2, "font-size", "0.9rem"]], template: function DbconnectionPopUpComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "\n  ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
@@ -2622,7 +2622,7 @@ function QueryConstructionComponent_div_46_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "\n          ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 59);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "\n            Keys\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "\n            Fields\n          ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "\n          ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 57);
@@ -2684,7 +2684,7 @@ function QueryConstructionComponent_div_49_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "\n          ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 59);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "\n            Property Keys\n          ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "\n            Properties\n          ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "\n          ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 57);
@@ -3967,7 +3967,7 @@ class QueryConstructionComponent {
         this.dropDownProps = {
             mongo: ['vehicle', 'car_type', 'hilIndex', 'location', 'date'],
             neo4j: ['vehicle', 'location', 'hilIndex', 'stHilIndex', 'date'],
-            hbase: ['location:vehicle', 'location:date', 'location'],
+            hbase: ['location'],
             hbaseID: [
                 'location:vehicle',
                 'location:date',

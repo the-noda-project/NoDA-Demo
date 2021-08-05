@@ -134,7 +134,7 @@ export class QueryConstructionComponent implements OnInit {
   dropDownProps = {
     mongo: ['vehicle', 'car_type', 'hilIndex', 'location', 'date'],
     neo4j: ['vehicle', 'location', 'hilIndex', 'stHilIndex', 'date'],
-    hbase: ['location:vehicle', 'location:date', 'location'],
+    hbase: ['location'],
     hbaseID: [
       'location:vehicle',
       'location:date',

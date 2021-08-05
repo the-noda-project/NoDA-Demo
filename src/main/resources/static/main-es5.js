@@ -2585,7 +2585,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       },
       decls: 43,
       vars: 8,
-      consts: [[1, "modal-content", "modalfade", "pt-2", "pb-2"], [1, "modal-header"], [1, "col-auto", "p-0", "align-self-center"], [1, "img-fluid", 2, "width", "8rem", 3, "src"], [1, "col-auto", "align-self-center", 2, "font-size", "1.1rem", "font-weight", "bold"], [1, "molad-body", "p-3"], [1, "row", "w-100", "m-0"], ["class", "col-12 mb-2", 4, "ngIf"], ["class", "col-6", 4, "ngIf"], ["class", "col-6 mt-2", 4, "ngIf"], [1, "modal-footer", "mt-2"], [1, "btn", "font-weight-bold", 2, "color", "#b12f26", "font-size", "1rem", "border", "2px solid #b12f26", 3, "click"], [1, "btn", "font-weight-bold", 2, "color", "#14274e", "font-size", "1rem", "border", "2px solid #14274e", 3, "click"], ["style", "font-size: 0.9rem;", "class", "fa fa-spinner fa-pulse fa-3x fa-fw", 4, "ngIf"], [1, "col-12", "mb-2"], ["placeholder", "Database", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["placeholder", "Collection", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "col-6"], ["placeholder", "Url", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["placeholder", "Port", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "col-6", "mt-2"], ["placeholder", "Username", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["placeholder", "Password", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "fa", "fa-spinner", "fa-pulse", "fa-3x", "fa-fw", 2, "font-size", "0.9rem"]],
+      consts: [[1, "modal-content", "modalfade", "pt-2", "pb-2"], [1, "modal-header"], [1, "col-auto", "p-0", "align-self-center"], [1, "img-fluid", 2, "width", "8rem", 3, "src"], [1, "col-auto", "align-self-center", 2, "font-size", "1.1rem", "font-weight", "bold"], [1, "molad-body", "p-3"], [1, "row", "w-100", "m-0"], ["class", "col-12 mb-2", 4, "ngIf"], ["class", "col-6", 4, "ngIf"], ["class", "col-6 mt-2", 4, "ngIf"], [1, "modal-footer", "mt-2"], [1, "btn", "font-weight-bold", 2, "color", "#b12f26", "font-size", "1rem", "border", "2px solid #b12f26", 3, "click"], [1, "btn", "font-weight-bold", 2, "color", "#14274e", "font-size", "1rem", "border", "2px solid #14274e", 3, "click"], ["style", "font-size: 0.9rem;", "class", "fa fa-spinner fa-pulse fa-3x fa-fw", 4, "ngIf"], [1, "col-12", "mb-2"], ["placeholder", "Database", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["placeholder", "Collection", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "col-6"], ["placeholder", "Url", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["placeholder", "Port", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "col-6", "mt-2"], ["placeholder", "Username", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], ["type", "password", "placeholder", "Password", 1, "form-control", "inputStyle", 3, "ngModel", "ngModelChange"], [1, "fa", "fa-spinner", "fa-pulse", "fa-3x", "fa-fw", 2, "font-size", "0.9rem"]],
       template: function DbconnectionPopUpComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -4941,7 +4941,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 59);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "\n            Keys\n          ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "\n            Fields\n          ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -5065,7 +5065,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 59);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "\n            Property Keys\n          ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "\n            Properties\n          ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -7756,7 +7756,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.dropDownProps = {
           mongo: ['vehicle', 'car_type', 'hilIndex', 'location', 'date'],
           neo4j: ['vehicle', 'location', 'hilIndex', 'stHilIndex', 'date'],
-          hbase: ['location:vehicle', 'location:date', 'location'],
+          hbase: ['location'],
           hbaseID: ['location:vehicle', 'location:date', 'location:latitude', 'location:longitude'],
           redis: ['vehicle', 'date', 'location'],
           redisID: ['vehicle', 'date', 'longitude', 'latitude']
