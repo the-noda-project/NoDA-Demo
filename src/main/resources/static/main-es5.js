@@ -7865,8 +7865,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             console.log(rectanglePoints);
             this.lat = rectanglePoints[0][0].lat;
             this.lon = rectanglePoints[0][0].lng;
-            this.lat1 = rectanglePoints[0][3].lat;
-            this.lon1 = rectanglePoints[0][3].lng;
+            this.lat1 = rectanglePoints[0][2].lat;
+            this.lon1 = rectanglePoints[0][2].lng;
           }
         }
       }, {
